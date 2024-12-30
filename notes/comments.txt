@@ -1,0 +1,28 @@
+handleClickOutsideOrEscape
+/* 
+    Conditional logic to determine whether the navigation links should be hidden:
+
+    1. `(navRef.current && !navRef.current.contains(event.target as Node))`:
+    - `navRef.current`: Checks if the `navRef` has been assigned to an actual DOM element.
+        (This prevents errors if the ref is still `null`.)
+    - `navRef.current.contains(event.target as Node)`:
+        - Ensures that the `event.target` (the element clicked) is not inside the `<nav>` element.
+        - `event.target` is cast to `Node` because `contains` expects a `Node` and not just any `EventTarget`.
+        - The `!` operator negates the result, so the condition becomes true if the click happened *outside* the `<nav>` element.
+
+    2. `(event instanceof KeyboardEvent && event.key === 'Escape')`:
+    - `event instanceof KeyboardEvent`: Ensures that the `event` is a keyboard event before accessing its properties.
+        (Prevents errors when the event is a `MouseEvent`, which doesn't have a `key` property.)
+    - `event.key === 'Escape'`: Checks if the `Escape` key was pressed.
+
+    3. Logical OR (`||`):
+    - If *either* of the above conditions is true:
+        - A click occurred outside the navigation bar, *or*
+        - The Escape key was pressed,
+        the navigation links should be hidden.
+
+    4. `setShowNavLinks(false)`:
+    - This updates the component state to hide the navigation links.
+*/
+
+
