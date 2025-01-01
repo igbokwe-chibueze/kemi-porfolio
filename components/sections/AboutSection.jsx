@@ -2,9 +2,13 @@
 const About = () => {
   return (
     <section id="aboutSection" className=" min-h-screen ">
-        <div className=" max-w-screen-xl mx-auto items-center px-4 lg:px-6 py-8 lg:py-16 ">
+      <div className=" main-container ">
+        <h2 className="font-monument-grotesk text-2xl md:text-5xl lg:text-7xl font-normal 
+          tracking-tight leading-none text-gray-900 dark:text-white"
+        >
           About Section
-        </div>
+        </h2>
+      </div>
     </section>
   )
 }
