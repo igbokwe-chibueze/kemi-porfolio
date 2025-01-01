@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { monumentGrotesk, gTWalsheimPro } from "./fonts";
 import "./globals.css";
-import Navbar from "@/components/navigation/Navbar";
-import Footer from "@/components/Footer";
-
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,9 +17,7 @@ export default function RootLayout({
       <body
         className={`${monumentGrotesk.variable} ${gTWalsheimPro.variable} antialiased`}
       >
-        <Navbar/>
         {children}
-        <Footer/>
       </body>
     </html>
   );

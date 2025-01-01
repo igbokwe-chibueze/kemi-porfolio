@@ -6,6 +6,7 @@ import NavLinks from "./NavLinks";
 import { navLinks } from "@/constants/Data";
 import { MenuBtnEmpty } from "@/constants/Icons";
 import ThemeSwitcher from "./ThemeSwitcher";
+//import Image from "next/image";
 
 const Navbar = () => {
     
@@ -49,21 +50,30 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav ref={navRef} className=" fixed top-0 right-0 left-0 z-30 px-4 lg:px-6 py-2.5 bg-[#0D0C13] dark:bg-red-700 border-b border-[#100F14] ">
+    <nav ref={navRef} className=" fixed top-0 right-0 left-0 z-30 px-4 lg:px-6 py-2.5 
+      bg-gray-200 dark:bg-[#0D0C13] border-b border-[#100F14] "
+    >
       <div className="flex flex-wrap justify-between items-center max-w-screen-xl mx-auto">
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
           {/* Put Logo here */}
-          <span className="font-monument-grotesk text-2xl font-normal text-white 
-            self-center whitespace-nowrap"
+          {/* <Image
+            src={"/creativa.png"}
+            width={64}
+            height={64}
+            loading='lazy'
+            alt={"Amelia Logo"}
+          /> */}
+          <span className="font-monument-grotesk text-xl lg:text-2xl font-normal text-gray-900 dark:text-white 
+            leading-none self-center whitespace-nowrap"
           >
             Amelia Olufowobi
           </span>
         </Link>
 
-        <div>
-          <span className="font-monument-grotesk text-2xl font-normal text-white 
+        <div className="hidden md:flex">
+          <span className="font-monument-grotesk text-xl lg:text-2xl font-normal text-gray-900 dark:text-white 
             self-center whitespace-nowrap"
           >
             Product Designer
@@ -71,20 +81,23 @@ const Navbar = () => {
         </div>
 
         {/* ThemeSwitcher and Menu Btn */}
-        <div className="flex justify-center items-center space-x-3">
+        <div className="flex justify-center items-center lg:space-x-3">
 
           <ThemeSwitcher/>
 
           <button type="button" 
             onClick={toggleNavLinks} 
-            className="inline-flex items-center justify-center w-[92px] h-[92px]"
+            className="w-10 h-10 lg:w-[92px] lg:h-[92px]"
           >
-            {showNavLinks ? <MenuBtnEmpty className="text-white hover:fill-slate-300"/> : <MenuBtnEmpty className="fill-white hover:fill-slate-300"/>}
+            {showNavLinks ? 
+              <MenuBtnEmpty className="text-gray-500 dark:text-white"/> 
+              : <MenuBtnEmpty className="fill-gray-500 dark:fill-gray-200 text-gray-500"/>
+            }
           </button>
         </div>
 
         {/* Links */}
-        <div className={`w-full ${showNavLinks ? 'block' : 'hidden'}`}>
+        <div className={`w-full ${showNavLinks ? 'block' : 'hidden'} overflow-y-auto max-h-screen no-scrollbar`}>
           <NavLinks data={navLinks} toggleNavLinks={toggleNavLinks}/>
         </div>
       </div>

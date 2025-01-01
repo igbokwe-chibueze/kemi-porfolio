@@ -40,7 +40,7 @@ const ThemeSwitcher = () => {
     <div className="flex items-center">
 
       <button
-        className="btn-menu inline-flex items-center justify-center w-16 h-16"
+        className="btn-menu w-10 h-10 lg:w-16 lg:h-16"
         onClick={toggleTheme}
       >
         {isDarkMode ? <SunIcon/> : <MoonIcon/>}

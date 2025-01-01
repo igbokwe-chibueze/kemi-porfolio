@@ -12,8 +12,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'night-blue': '#0D0C13',
       },
       fontFamily: {
         "monument-grotesk": ["var(--font-monument-grotesk)"],

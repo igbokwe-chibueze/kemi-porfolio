@@ -4,7 +4,7 @@ export const SunIcon = ({ className = '', ...rest }) => (
       fill="currentColor" 
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
-      className={`w-6 h-6 ${className}`}
+      className={`${className}`}
     >
       <path fillRule="evenodd" 
         d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 
@@ -23,7 +23,7 @@ export const MoonIcon = ({ className = '', ...rest }) => (
       fill="currentColor" 
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
-      className={`w-6 h-6 ${className}`}
+      className={`${className}`}
     >
       <path fillRule="evenodd" 
         d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 
@@ -40,7 +40,7 @@ export const MenuBtnEmpty = ({ className = '', ...rest }) => (
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path d="M18.5166 55.4498C18.5166 52.4123 20.979 49.9498 24.0166 49.9498H36.5499C39.5875 49.9498 
       42.0499 52.4123 42.0499 55.4498V67.9832C42.0499 71.0207 39.5875 73.4832 36.5499 73.4832H24.0166C20.979 
@@ -196,13 +196,13 @@ export const BubbleIcon = ({ className = '', ...rest }) => (
     />
     <path d="M57.7962 31.2246C63.0396 30.7958 64.4746 32.436 65.911 33.9314C68.3532 36.6409 68.1385 41.7731 64.6906 
       43.8407C62.4645 45.1231 60.0236 45.4795 57.4384 45.3375C50.5439 44.9087 49.8258 33.0765 57.7975 31.2233L57.7962 31.2246Z" 
-      fill="#F7F2EC"
+      fill="currentColor"
     />
     <path d="M56.4041 57.4016C61.6461 56.9728 63.0825 58.613 64.5189 60.1098C66.9611 62.8179 66.7464 67.9501 63.2985 
-      70.0177C61.071 71.3001 58.6302 71.6565 56.045 71.5145C49.1519 71.0857 48.5052 59.2535 56.4041 57.4016Z" fill="#F7F2EC"
+      70.0177C61.071 71.3001 58.6302 71.6565 56.045 71.5145C49.1519 71.0857 48.5052 59.2535 56.4041 57.4016Z" fill="currentColor"
     />
     <path d="M56.4041 83.5785C61.6461 83.151 63.0825 84.7912 64.5189 86.288C66.9611 88.9961 66.7464 94.127 63.2985 96.1946C61.071 
-      97.4783 58.6302 97.8347 56.045 97.6914C49.1519 97.2639 48.5052 85.4317 56.4041 83.5785Z" fill="#F7F2EC"
+      97.4783 58.6302 97.8347 56.045 97.6914C49.1519 97.2639 48.5052 85.4317 56.4041 83.5785Z" fill="currentColor"
     />
     <path d="M64.0803 6.74828C69.8948 6.82466 73.8733 8.7221 77.2388 11.457C89.3281 21.3288 86.6497 39.7069 88.1806 
       53.4526C88.4101 55.7306 88.7152 58.3128 89.9396 60.2866C92.9231 65.2996 104.962 65.9763 104.962 70.685C103.275 74.37 
@@ -215,15 +215,15 @@ export const BubbleIcon = ({ className = '', ...rest }) => (
     />
     <path d="M57.7962 31.2246C63.0396 30.7958 64.4746 32.436 65.911 33.9314C68.3532 36.6409 68.1385 41.7731 64.6906 
       43.8407C62.4645 45.1231 60.0236 45.4795 57.4384 45.3375C50.5439 44.9087 49.8258 33.0765 57.7975 31.2233L57.7962 31.2246Z" 
-      stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
+      fill="#9ca3af" stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
     />
     <path d="M56.4041 57.4016C61.6461 56.9728 63.0825 58.613 64.5189 60.1098C66.9611 62.8179 66.7464 67.9501 63.2985 
       70.0177C61.071 71.3001 58.6302 71.6565 56.045 71.5145C49.1519 71.0857 48.5052 59.2535 56.4041 57.4016Z" 
-      stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
+      fill="#9ca3af" stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
     />
     <path d="M56.4041 83.5785C61.6461 83.151 63.0825 84.7912 64.5189 86.288C66.9611 88.9961 66.7464 94.127 63.2985 96.1946C61.071 
       97.4783 58.6302 97.8347 56.045 97.6914C49.1519 97.2639 48.5052 85.4317 56.4041 83.5785Z" 
-      stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
+      fill="#9ca3af" stroke="currentColor" strokeWidth="0.612512" strokeMiterlimit="1.915" strokeLinecap="round" strokeLinejoin="round"
     />
   </svg>
 );
