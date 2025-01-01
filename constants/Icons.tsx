@@ -58,7 +58,7 @@ export const FlashIcon = ({ className = '', ...rest }) => (
     fill="currentColor" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path d="M13.8969 4.55324C14.3034 4.88588 39.7431 1.5326 49.0022 0.861715C51.7238 0.667955 54.3894 0.438356 
       57.1222 0.438356C57.6486 0.438356 59.5649 -0.138444 59.9188 0.581716C60.7588 2.27852 58.7954 6.40012 58.2511 
@@ -79,7 +79,7 @@ export const HandIcon = ({ className = '', ...rest }) => (
     fill="currentColor" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path d="M89.0496 30.1274C94.1001 35.2808 89.3121 52.3696 89.6985 58.0553C90.2928 66.7756 92.3518 73.1239 91.4037 
       79.4669C89.5305 91.9693 75.3912 102.644 58.9293 96.983C53.0902 94.9639 45.2698 88.0433 39.9736 84.6854C34.5042 81.2141 
@@ -113,7 +113,7 @@ export const SmileIcon = ({ className = '', ...rest }) => (
     fill="currentColor" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path fillRule="evenodd" clipRule="evenodd" d="M53.7065 42.2351C52.4147 41.2369 50.8128 40.7252 49.1816 40.7896C47.7582 
       40.8559 46.3881 41.3507 45.2508 42.2091C43.7241 43.3484 42.8803 44.8812 42.4745 45.7081C39.9127 50.9236 40.0015 59.0761 
@@ -184,7 +184,7 @@ export const BubbleIcon = ({ className = '', ...rest }) => (
     fill="currentColor" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path d="M64.0803 6.74828C69.8948 6.82466 73.8733 8.7221 77.2388 11.457C89.3281 21.3288 86.6497 39.7069 88.1806 
       53.4526C88.4101 55.7306 88.7152 58.3128 89.9396 60.2866C92.9231 65.2996 104.962 65.9763 104.962 70.685C103.275 74.37 
@@ -234,7 +234,7 @@ export const HashtagIcon = ({ className = '', ...rest }) => (
     fill="currentColor" 
     xmlns="http://www.w3.org/2000/svg"
     {...rest}
-    className={`w-6 h-6 ${className}`}
+    className={`${className}`}
   >
     <path fillRule="evenodd" clipRule="evenodd" d="M32.9063 14.9106C33.0776 13.4685 33.778 7.56784 35.1062 6.47879C36.9186 
       4.98954 45.1342 5.14709 48.6613 5.21609C49.1845 5.22529 49.6043 5.23334 49.8849 5.23449C50.0344 5.23449 50.2023 5.22414 
@@ -301,5 +301,17 @@ export const HashtagIcon = ({ className = '', ...rest }) => (
       46.114 59.8848C45.6943 59.4708 46.551 57.4583 46.7615 57.0385C48.1093 54.3395 49.0385 51.024 49.7492 48.08C49.9056 
       47.4176 50.0781 46.7633 50.2506 46.1078C50.4852 45.2108 50.7209 44.3138 50.9164 43.4018H50.9153Z" fill="currentColor"
     />
+  </svg>
+);
+
+export const ArrowDownIcon = ({ className = '', ...rest }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    {...rest}
+    className={`${className}`}
+  >
+    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
   </svg>
 );
