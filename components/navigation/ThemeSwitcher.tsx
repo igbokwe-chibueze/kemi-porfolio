@@ -8,20 +8,17 @@ const ThemeSwitcher = () => {
     useEffect(() => {
         // Use local storage to remember the user's theme preference
         const storedTheme = localStorage.getItem("theme");
-        
-        // Check for system's preferred theme
-        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         if (storedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-        setIsDarkMode(true);
+          document.documentElement.classList.add("dark");
+          setIsDarkMode(true);
         } else if (storedTheme === "light") {
-        document.documentElement.classList.remove("dark");
-        setIsDarkMode(false);
-        } else if (prefersDarkMode) {
-        // Set theme based on system preference
-        document.documentElement.classList.add("dark");
-        setIsDarkMode(true);
+          document.documentElement.classList.remove("dark");
+          setIsDarkMode(false);
+        } else {
+          // Default to dark theme if no preference is stored
+          document.documentElement.classList.add("dark");
+          setIsDarkMode(true);
         }
     }, []);
 

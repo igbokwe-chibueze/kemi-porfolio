@@ -4,9 +4,9 @@ import Image from "next/image"
 const Hero = () => {
   return (
     <section id="heroSection" className=" min-h-screen ">
-        <div className=" relative main-container py-8 lg:py-16">
+        <div className=" relative main-container">
           {/* Column One */}
-          <div className=" lg:col-span-6 ">
+          <div className="">
             <h2 className="font-monument-grotesk text-2xl md:text-5xl lg:text-7xl font-normal 
               tracking-tight leading-none text-gray-900 dark:text-white"
             >
@@ -43,7 +43,7 @@ const Hero = () => {
               width={560}
               height={560}
               loading='lazy'
-              alt={"Amelia Logo"}
+              alt={"Amelia Photo"}
               className=""
             />
 
