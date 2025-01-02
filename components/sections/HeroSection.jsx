@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <section id="heroSection" className=" min-h-screen ">
+    <section id="heroSection" className="lg:min-h-screen">
         <div className=" relative main-container">
           {/* Column One */}
           <div className="">
