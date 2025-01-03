@@ -27,7 +27,7 @@ const Accordion = ({ data }: AccordionProps) => {
           <button
             onClick={() => toggleAccordion(index)}
             className="w-full py-2 lg:py-6 flex justify-between items-center rounded-sm
-              font-gT-WalsheimPro text-4xl md:text-5xl lg:text-[140px] font-normal 
+              font-gT-WalsheimPro text-4xl md:text-5xl lg:text-[140px] font-normal lg:uppercase 
               tracking-wide lg:leading-none text-gray-900 dark:text-white
             hover:bg-gray-300 dark:hover:bg-gray-700 "
           >
@@ -36,7 +36,7 @@ const Accordion = ({ data }: AccordionProps) => {
             <div className="mr-8 group px-5 py-2 bg-[#D9D9D9] hover:bg-[#FAB041] 
               rounded-full lg:ml-auto">
               <ArrowDownIcon
-                className={`text-black w-6 h-6 lg:w-8 lg:h-8 transform 
+                className={`text-black w-6 h-6 lg:w-56 lg:h-40 transform 
                 ${openIndex === index ? "-rotate-90" : "transition-transform duration-300 group-hover:-rotate-90"}`}
               />
             </div>

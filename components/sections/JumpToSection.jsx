@@ -1,9 +1,15 @@
+import { navLinks } from "@/constants/Data"
+import NavLinks from "../navigation/NavLinks"
 
 const JumpToSection = () => {
   return (
     <section id="jumpToSection" className=" min-h-screen ">
-        <div className=" max-w-screen-xl mx-auto items-center px-4 lg:px-6 py-8 lg:py-16 ">
-          Jump TO Section
+        <div className=" main-container space-y-10 lg:space-y-14 ">
+            <h1 className="header-one">
+                Jump to
+            </h1>
+
+            <NavLinks data={navLinks} />
         </div>
     </section>
   )

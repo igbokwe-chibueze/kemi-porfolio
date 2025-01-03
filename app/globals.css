@@ -12,6 +12,11 @@
     focus:outline-none focus:ring-1 focus:ring-gray-500 transition duration-500 ease-in-out;
   }
 
+  .header-one {
+    @apply font-monument-grotesk text-4xl md:text-5xl lg:text-[140px] font-normal tracking-wide lg:leading-none 
+    text-gray-900 dark:text-white;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
   }

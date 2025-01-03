@@ -6,9 +6,7 @@ const Projects = () => {
     <section id="projectSection" className=" min-h-screen ">
         <div className=" main-container space-y-10 lg:space-y-20">
           <div className="space-y-8">
-            <h1 className="font-monument-grotesk text-4xl md:text-5xl lg:text-[140px] font-normal 
-              tracking-wide lg:leading-none text-gray-900 dark:text-white"
-            >
+            <h1 className="header-one">
               Selected Projects
             </h1>
 

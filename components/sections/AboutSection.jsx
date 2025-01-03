@@ -6,7 +6,7 @@ const About = () => {
     <section id="aboutSection" className=" lg:min-h-screen">
       <div className=" main-container">
         <div className="space-y-2 lg:space-y-8">
-          <h2 className="font-gT-WalsheimPro text-xl md:text-5xl lg:text-7xl font-normal 
+          <h2 className="lg:pl-64 font-gT-WalsheimPro text-xl lg:text-6xl font-normal 
             text-pretty tracking-tight text-gray-900 dark:text-white"
           >
             Driven by a passion for innovative product, 
