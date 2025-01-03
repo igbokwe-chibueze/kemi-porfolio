@@ -11,8 +11,8 @@ const Footer = () => {
               Let&apos;s work together
             </span>
 
-            <div className="w-fit px-2 lg:px-4 lg:py-3 bg-[#0A0C06] rounded-[40px]">
-              <span className="font-monument-grotesk text-[22px] lg:text-8xl font-normal text-[#C7FC56]"
+            <div className="w-fit px-2 lg:px-4 lg:py-3 bg-green-950 rounded-[40px]">
+              <span className="font-monument-grotesk text-xl lg:text-8xl font-normal text-[#C7FC56]"
               >
                 okemiolufowobi@gmail.com
               </span>
