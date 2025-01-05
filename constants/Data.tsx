@@ -123,8 +123,8 @@ type Experiments = {
     image: string;
 };
 
-export const selectedExperiments: Experiments[] = [
-    {image: "/Pakam 1.png"},
-    {image: "/Pakam 2.png"},
-]
+export const selectedExperiments: Experiments[] = Array.from({ length: 27 }, (_, index) => ({
+    image: `/SlideImages/SlideImage (${index + 1}).png`,
+}));
+
   

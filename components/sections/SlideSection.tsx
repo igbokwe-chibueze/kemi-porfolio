@@ -1,7 +1,5 @@
 import { ArrowDownIcon } from "@/constants/Icons"
-import { selectedExperiments } from "@/constants/Data"
-import Image from "next/image"
-import ScrollSlider from "../ScrollSlider"
+import ImageSlider from "../ImageSlider"
 
 
 const SlidesSection = () => {
@@ -24,50 +22,9 @@ const SlidesSection = () => {
 
           {/* Slides */}
           <div className="space-y-4 lg:space-y-8">
-            <ScrollSlider itemsWrapperClassName='animate-move-right [animation-duration:10s] hover:[animation-play-state:paused]'>
-              {selectedExperiments.map((experiment, index) =>(
-                <div key={index} className="bg-[#D9D9D9] p-2 lg:p-8">
-                  <Image
-                    src={experiment.image}
-                    width={667.37}
-                    height={427.45}
-                    loading='lazy'
-                    alt={`Experiment ${index + 1}`} 
-                    layout="responsive"
-                  />
-                </div>
-              ))}
-            </ScrollSlider>
-
-            <ScrollSlider itemsWrapperClassName='animate-move-left [animation-duration:13s] hover:[animation-play-state:paused]'>
-              {selectedExperiments.map((experiment, index) =>(
-                <div key={index} className="bg-[#D9D9D9] p-2 lg:p-8">
-                  <Image
-                    src={experiment.image}
-                    width={667.37}
-                    height={427.45}
-                    loading='lazy'
-                    alt={`Experiment ${index + 1}`} 
-                    layout="responsive"
-                  />
-                </div>
-              ))}
-            </ScrollSlider>
-
-            <ScrollSlider itemsWrapperClassName='animate-move-right [animation-duration:10s] hover:[animation-play-state:paused]'>
-              {selectedExperiments.map((experiment, index) =>(
-                <div key={index} className="bg-[#D9D9D9] p-2 lg:p-8">
-                  <Image
-                    src={experiment.image}
-                    width={667.37}
-                    height={427.45}
-                    loading='lazy'
-                    alt={`Experiment ${index + 1}`} 
-                    layout="responsive"
-                  />
-                </div>
-              ))}
-            </ScrollSlider>
+            <ImageSlider itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
+            <ImageSlider itemsWrapperClassName='animate-move-left [animation-duration:40s] hover:[animation-play-state:paused]'/>
+            <ImageSlider itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
           </div>
         </div>
     </section>
