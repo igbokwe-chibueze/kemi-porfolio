@@ -1,4 +1,4 @@
-handleClickOutsideOrEscape
+handleClickOutsideOrEscape on Navrbar
 /* 
     Conditional logic to determine whether the navigation links should be hidden:
 
@@ -24,5 +24,23 @@ handleClickOutsideOrEscape
     4. `setShowNavLinks(false)`:
     - This updates the component state to hide the navigation links.
 */
+
+2) On ScrollSlider.tsx component
+
+{[...Array(6)].map((_, index) => (
+          <div key={index} className="flex-shrink-0">
+            {/* index % React.Children.count(children): This calculates the index of the child we want to render. 
+            If the index exceeds the number of children, it "wraps around" to the start, effectively cycling through the children */}
+            {React.Children.toArray(children)[index % React.Children.count(children)]}
+          </div>
+        ))}
+Explanation of the Code:
+[...Array(12)]: Creates an array with 12 elements, which we map over. Each iteration corresponds to an index (0-11).
+
+React.Children.toArray(children): Converts the children prop into a flat array. This allows us to access individual child elements by their index.
+
+React.Children.count(children): Returns the total number of children, which ensures that we don't try to access an out-of-bounds index.
+
+index % React.Children.count(children): This calculates the index of the child we want to render. If the index exceeds the number of children, it "wraps around" to the start, effectively cycling through the children.
 
 

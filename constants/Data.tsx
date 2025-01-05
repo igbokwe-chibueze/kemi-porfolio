@@ -119,4 +119,12 @@ export const projectData: AccordionData[] = [
     },
 ];
 
+type Experiments = {
+    image: string;
+};
+
+export const selectedExperiments: Experiments[] = [
+    {image: "/Pakam 1.png"},
+    {image: "/Pakam 2.png"},
+]
   
