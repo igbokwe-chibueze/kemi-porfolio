@@ -19,7 +19,7 @@ const About = () => {
 
           <div className="flex justify-end" >
             <Link 
-              href={""} 
+              href={`/about`} target="_blank" 
               className={`group inline-flex justify-center items-center py-3 lg:py-6 px-8 lg:px-20 lg:w-[650px] rounded-full 
                 bg-[#D9D9D9] hover:bg-[#C7FC56] text-black `}
             >

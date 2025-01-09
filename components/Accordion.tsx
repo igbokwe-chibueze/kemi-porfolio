@@ -3,6 +3,7 @@
 import { AccordionData } from "@/constants/Data";
 import { ArrowDownIcon } from "@/constants/Icons";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface AccordionProps {
@@ -37,7 +38,7 @@ const Accordion = ({ data }: AccordionProps) => {
               rounded-full lg:ml-auto">
               <ArrowDownIcon
                 className={`text-black w-6 h-6 lg:w-56 lg:h-40 transform 
-                ${openIndex === index ? "-rotate-90" : "transition-transform duration-300 group-hover:-rotate-90"}`}
+                ${openIndex === index ? "transition-transform duration-300 -rotate-90" : "transition-transform duration-300 group-hover:-rotate-90"}`}
               />
             </div>
           </button>
@@ -103,8 +104,8 @@ const Accordion = ({ data }: AccordionProps) => {
                         </a>
 
                         {/* Case Study Button */}
-                        <a
-                          href={item.caseStudyLink}
+                        <Link
+                          href={`/caseStudy/${item.caseStudyLink}`} target="_blank"
                           className="relative group px-5 py-2 bg-[#D9D9D9] hover:bg-[#FAB041] 
                           rounded-full lg:ml-auto"
                         >
@@ -116,13 +117,15 @@ const Accordion = ({ data }: AccordionProps) => {
 
                           {/* Tooltip */}
                           <div
-                            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-max px-3 py-1 
-                              text-sm text-white bg-black dark:bg-transparent rounded-md
-                              opacity-0 group-hover:opacity-100 group-hover:translate-y-[-5px] transition-all duration-300"
+                            className="absolute left-full lg:left-1/2 lg:-translate-x-1/2 
+                              top-1/2 lg:top-full lg:mt-2 w-max px-3 py-1 
+                              text-sm text-white bg-black dark:bg-transparent rounded-md opacity-0 group-hover:opacity-100 
+                              lg:group-hover:translate-y-[-5px] transition-all duration-300"
                           >
                             View Case Study
                           </div>
-                        </a>
+
+                        </Link>
 
                       </div>
                     </div>

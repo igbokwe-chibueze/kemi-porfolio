@@ -3,7 +3,7 @@ import NavLinks from "../navigation/NavLinks"
 
 const JumpToSection = () => {
   return (
-    <section id="jumpToSection" className=" min-h-screen ">
+    <section id="jumpToSection" className=" min-h-screen bg-gray-200 dark:bg-night-blue">
         <div className=" main-container space-y-10 lg:space-y-14 ">
             <h1 className="header-one">
                 Jump to

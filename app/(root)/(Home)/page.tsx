@@ -1,4 +1,6 @@
-import { AboutSection, HeroSection, JumpToSection, ProjectsSection, SlideSection } from "@/components/sections"
+"use client"
+//import GooeyEffect from "@/components/GooeyEffect"
+import { AboutSection, HeroSection, ProjectsSection, SlideSection } from "@/components/sections"
 
 
 const page = () => {
@@ -8,7 +10,7 @@ const page = () => {
       <AboutSection/>
       <ProjectsSection/>
       <SlideSection/>
-      <JumpToSection/>
+      {/* <GooeyEffect/> */}
     </>
   )
 }
