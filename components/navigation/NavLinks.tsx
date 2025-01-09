@@ -21,7 +21,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ data, toggleNavLinks }) => {
         {data.map((link, index) => (
             <li key={index}>
                 <Link 
-                    href={link.href} 
+                    href={`/${link.href}`} target="_blank" 
                     onClick={toggleNavLinks}
                     className={`group flex justify-center items-center py-6 lg:py-10 px-4 rounded-full 
                         bg-[#D9D9D9] text-black hover:bg-[var(--hover-color)]`}

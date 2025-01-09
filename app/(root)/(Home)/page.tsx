@@ -1,3 +1,5 @@
+"use client"
+//import GooeyEffect from "@/components/GooeyEffect"
 import { AboutSection, HeroSection, JumpToSection, ProjectsSection, SlideSection } from "@/components/sections"
 
 
@@ -9,6 +11,7 @@ const page = () => {
       <ProjectsSection/>
       <SlideSection/>
       <JumpToSection/>
+      {/* <GooeyEffect/> */}
     </>
   )
 }
