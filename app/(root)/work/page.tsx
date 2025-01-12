@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import Accordion from "@/components/Accordion"
 import ImageSlider from "@/components/ImageSlider"
 import { projectData } from "@/constants/Data"
-=======
->>>>>>> 8c3a8c4ca41aecb6bb4c4d42d276f4a0c46e2591
 
 
 const page = () => {
   return (
     <div className=" lg:min-h-screen">
-<<<<<<< HEAD
       <div className=" main-container space-y-10 lg:space-y-20">
         <div
           className="ml-auto w-[830px] h-20 lg:h-[130px] px-4 lg:px-10 
@@ -40,13 +36,6 @@ const page = () => {
           <ImageSlider itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
         </div>
       </div>
-=======
-        <div className=" main-container">
-            <h1 className="header-one">
-                Work
-            </h1>
-        </div>
->>>>>>> 8c3a8c4ca41aecb6bb4c4d42d276f4a0c46e2591
     </div>
   )
 }
