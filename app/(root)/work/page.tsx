@@ -8,7 +8,7 @@ const page = () => {
     <div className=" lg:min-h-screen">
       <div className=" main-container space-y-10 lg:space-y-20">
         <div
-          className="ml-auto w-[830px] h-20 lg:h-[130px] px-4 lg:px-10 
+          className="ml-auto w-64 lg:w-[830px] h-20 lg:h-[130px] px-4 lg:px-10 
           bg-[#5e2d2d] dark:bg-[#FBC3C3] rounded-full"
         ></div>
 

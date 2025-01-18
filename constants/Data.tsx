@@ -127,4 +127,59 @@ export const selectedExperiments: Experiments[] = Array.from({ length: 27 }, (_,
     image: `/SlideImages/SlideImage (${index + 1}).png`,
 }));
 
+
+//************Profile */
+export interface DesignProcess {
+    topic: string;
+    body: string;
+    headingBg: string;
+    headingTextColor: string;
+};
+// type DesignProcess = {
+//     topic: string;
+//     body: string;
+//     headingBg: string;
+//     headingTextColor: string;
+// };
+
+export interface ProfileData {
+    profilePicture: string;
+    salutation: string;
+    name: string;
+    intro: string;
+    designProcess: DesignProcess[];
+};
+
+export const profileData: ProfileData = {
+    profilePicture: "/KemiProfile.jpg",
+    salutation: "Hi, I’m Amelia",
+    name: "Oluwakemi Olufowobi",
+    intro: "And I help startups create unique and empathic product experiences.",
+    designProcess: [
+        {
+            topic: "Research & Discovery",
+            headingBg: '#101A1E',
+            headingTextColor: '#38D9FD',
+            body: "Understanding the problem space, gathering requirements, and identifying user needs to set a solid foundation for design.",
+        },
+        {
+            topic: "Ideation & Prototyping",
+            headingBg: '#422006',
+            headingTextColor: '#FAB041',
+            body: "Brainstorming and conceptualizing ideas, followed by creating low-fidelity wireframes and interactive prototypes.",
+        },
+        {
+            topic: "Design & Implementation",
+            headingBg: '#250949',
+            headingTextColor: '#AF71FF',
+            body: "Crafting high-fidelity designs and collaborating with developers to bring the vision to life with pixel-perfect precision.",
+        },
+        {
+            topic: "Testing & Iteration",
+            headingBg: '#470909',
+            headingTextColor: '#FFB7B7',
+            body: "Conducting usability tests, collecting feedback, and iterating to refine the product for optimal user experience.",
+        },
+    ],
+};
   
