@@ -1,3 +1,4 @@
+import RandomProject from "@/components/RandomProject";
 
 type PageParams = {
     slug: string;
@@ -11,11 +12,20 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
 
   return (
     <div className=" lg:min-h-screen">
-        <div className=" main-container">
-            <h1 className="header-one">
-                See {slug}
-            </h1>
+      <div className=" main-container">
+        <div className="space-y-12">
+
+          <h1 className="header-one">
+            See {slug}
+          </h1>
+
+          <div className=" px-48">
+            <RandomProject/>
+          </div>
+
         </div>
+          
+      </div>
     </div>
   )
 }
