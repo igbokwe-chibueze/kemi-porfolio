@@ -105,7 +105,7 @@ const Accordion = ({ data }: AccordionProps) => {
 
                         {/* Case Study Button */}
                         <Link
-                          href={`/caseStudy/${item.caseStudyLink}`} target="_blank"
+                          href={`/caseStudy/${item.slug}`} target="_blank"
                           className="relative group px-5 py-2 bg-[#D9D9D9] hover:bg-[#FAB041] 
                           rounded-full lg:ml-auto"
                         >

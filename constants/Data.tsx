@@ -16,7 +16,7 @@ type AccordionItem = {
     image: string;
     tags: string[];
     liveLink: string;
-    caseStudyLink: string;
+    slug: string;
 };
   
 export interface AccordionData {
@@ -35,7 +35,7 @@ export const projectData: AccordionData[] = [
             image: "/Pakam 1.png",
             tags: ["React", "Tailwind CSS", "Next.js", "Figma", "Vercel"],
             liveLink: "https://ecommerce.com",
-            caseStudyLink: "ecommerce",
+            slug: "ecommerce",
           },
           {
             heading: "Portfolio Website",
@@ -44,7 +44,7 @@ export const projectData: AccordionData[] = [
             image: "/Pakam 2.png",
             tags: ["React", "Tailwind CSS", "Next.js"],
             liveLink: "https://ecommerce.com",
-            caseStudyLink: "portfolio",
+            slug: "portfolio",
           },
         ],
     },
@@ -58,7 +58,7 @@ export const projectData: AccordionData[] = [
                 image: "/Pakam 2.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
-                caseStudyLink: "banking",
+                slug: "banking",
             },
             {
                 heading: "Police Website",
@@ -67,7 +67,7 @@ export const projectData: AccordionData[] = [
                 image: "/Pakam 1.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
-                caseStudyLink: "police",
+                slug: "police",
             },
         ],
     },
@@ -81,7 +81,7 @@ export const projectData: AccordionData[] = [
             image: "/Pakam 1.png",
             tags: ["React", "Tailwind CSS", "Next.js", "Figma", "Vercel"],
             liveLink: "https://ecommerce.com",
-            caseStudyLink: "wecareEcommerce",
+            slug: "wecareEcommerce",
           },
           {
             heading: "Portfolio Website",
@@ -90,7 +90,7 @@ export const projectData: AccordionData[] = [
             image: "/Pakam 2.png",
             tags: ["React", "Tailwind CSS", "Next.js"],
             liveLink: "https://ecommerce.com",
-            caseStudyLink: "wecarePortfolio",
+            slug: "wecarePortfolio",
           },
         ],
     },
@@ -104,7 +104,7 @@ export const projectData: AccordionData[] = [
                 image: "/Pakam 2.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
-                caseStudyLink: "errandBoxBanking",
+                slug: "errandBoxBanking",
             },
             {
                 heading: "Police Website",
@@ -113,7 +113,7 @@ export const projectData: AccordionData[] = [
                 image: "/Pakam 1.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
-                caseStudyLink: "errandBoxPolice",
+                slug: "errandBoxPolice",
             },
         ],
     },
