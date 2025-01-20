@@ -1,4 +1,4 @@
-"use client"
+
 //import GooeyEffect from "@/components/GooeyEffect"
 import { AboutSection, HeroSection, ProjectsSection, SlideSection } from "@/components/sections"
 
