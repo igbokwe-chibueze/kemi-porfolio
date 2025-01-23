@@ -24,7 +24,7 @@ const RandomProject: React.FC = () => {
       </h2>
 
       <Image
-        src={randomProject.image}
+        src={randomProject.smallImage}
         alt={randomProject.heading}
         width={781.88}
         height={556}

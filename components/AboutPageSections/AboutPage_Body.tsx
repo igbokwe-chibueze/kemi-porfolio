@@ -10,11 +10,11 @@ const AboutPage_Body = () => {
                     leading-loose text-pretty tracking-tight text-gray-900 dark:text-white"
                 >
                     I am a dedicated product designer with a passion for creating intuitive and impactful
-                    <small className=" px-2 text-[#FAB041] bg-yellow-950 text-xl lg:text-6xl rounded-full mx-1">user experiences. </small>
+                    <small className=" px-2 text-[#FAB041] bg-yellow-950 text-xl lg:text-5xl rounded-full mx-1">user experiences. </small>
                     My work revolves around understanding user needs and 
                     translating them into thoughtful design solutions that not only meet but exceed expectations. 
                     With a background in both research and design, I approach each project with a 
-                    <small className="px-2 text-[#38D9FD] text-xl lg:text-6xl bg-blue-950 rounded-full mx-1">user-centric mindset, </small>
+                    <small className="px-2 text-[#38D9FD] text-xl lg:text-5xl bg-blue-950 rounded-full mx-1">user-centric mindset, </small>
                     ensuring that the final product is both functional and delightful to use.
                 </h2>
 
@@ -42,7 +42,7 @@ const AboutPage_Body = () => {
                         tracking-tight lg:leading-[50px] text-gray-900 dark:text-white"
                     >
                         I effectively collaborate with engineers and cross-functional teams to design and 
-                        <small className=" px-2 text-xl lg:text-6xl text-[#FAB041] bg-yellow-950 rounded-full mx-1">deliver seamless websites </small>
+                        <small className=" px-2 text-xl lg:text-4xl text-[#FAB041] bg-yellow-950 rounded-full mx-1">deliver seamless websites </small>
                         and applications for companies and individuals.
                     </p>
 
@@ -51,7 +51,7 @@ const AboutPage_Body = () => {
                     >
                         With extensive experience working hand-in-hand with engineering teams and leading product 
                         initiatives, I leverage my UI expertise to drive product solutions and craft intuitive, 
-                        <small className=" px-2 text-xl lg:text-6xl text-[#C7FC56] bg-green-950 rounded-full mx-1">user-centric experiences </small>
+                        <small className=" px-2 text-xl lg:text-4xl text-[#C7FC56] bg-green-950 rounded-full mx-1">user-centric experiences </small>
                         that delight.
                     </p>
                 </div>

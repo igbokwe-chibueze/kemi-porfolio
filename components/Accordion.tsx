@@ -67,7 +67,7 @@ const Accordion = ({ data }: AccordionProps) => {
 
                     {/* Image */}
                     <Image
-                      src={item.image}
+                      src={item.smallImage}
                       alt={item.heading}
                       width={781.88}
                       height={556}

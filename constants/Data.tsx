@@ -1,22 +1,41 @@
 import { BubbleIcon, FlashIcon, HandIcon, HashtagIcon, SmileIcon } from "./Icons";
 
 export const navLinks = [
-    { href: 'work', text: 'WORK', icon: <FlashIcon/>, hoverColor: '#FAB041' },
-    { href: 'about', text: 'ABOUT', icon: <HandIcon/>, hoverColor: '#FAE741' },
-    { href: 'contact', text: 'CONTACT', icon: <SmileIcon/>, hoverColor: '#FAE741' },
-    { href: 'linkedin', text: 'LINKEDIN', icon: <BubbleIcon/>, hoverColor: '#2459E0' },
-    { href: 'twitter', text: 'X (TWITTER)', icon: <HashtagIcon/>, hoverColor: '#38D9FD' },
-    { href: 'download-cv', text: 'DOWNLOAD CV', icon: <HashtagIcon/>, hoverColor: '#38D9FD' },
+  { href: 'work', text: 'WORK', icon: <FlashIcon/>, hoverColor: '#FAB041' },
+  { href: 'about', text: 'ABOUT', icon: <HandIcon/>, hoverColor: '#FAE741' },
+  { href: 'mailto:igbokwechibueze@yahoo.co.uk', text: 'CONTACT', icon: <SmileIcon/>, hoverColor: '#FAE741' },
+  { href: 'https://www.linkedin.com/in/amelia-kemi-olufowobi', text: 'LINKEDIN', icon: <BubbleIcon/>, hoverColor: '#2459E0' },
+  { href: 'https://twitter.com/Amelia_olu?s=09', text: 'X (TWITTER)', icon: <HashtagIcon/>, hoverColor: '#38D9FD' },
+  { href: '', text: 'DOWNLOAD CV', icon: <HashtagIcon />, hoverColor: '#38D9FD', isDownload: true },
 ];
+
+//************Project */
+type ProjectOverview = {
+    backgroundInfo: string;
+    problems: string[];
+    goals: string[];
+    opportunity: string[];
+    solutions: string[];
+};
+  
+type SnapshotsDetails = {
+    imageUrl: string;
+    description: string[];
+};
 
 type AccordionItem = {
     heading: string;
     headingBg: string;
+    btnBg: string;
     headingTextColor: string;
-    image: string;
+    headerImage: string;
+    smallImage: string;
     tags: string[];
     liveLink: string;
     slug: string;
+    projectOverview?: ProjectOverview; // Grouped fields
+    snapshots?: SnapshotsDetails[];
+
 };
   
 export interface AccordionData {
@@ -31,20 +50,112 @@ export const projectData: AccordionData[] = [
           {
             heading: "E-Commerce Website",
             headingBg: '#171E0A',
+            btnBg: '#43C949',
             headingTextColor: '#C7FC56',
-            image: "/Pakam 1.png",
+            headerImage: "/PakamHeaderImage.png",
+            smallImage: "/PakamSmall.png",
             tags: ["React", "Tailwind CSS", "Next.js", "Figma", "Vercel"],
             liveLink: "https://ecommerce.com",
             slug: "ecommerce",
+            projectOverview: {
+                backgroundInfo: "Pakam is a recycling company is Lagos Nigeria that is using technology to solve waste problems in Lagos",
+                problems: [
+                  "Users found it difficult to locate eco-friendly products.",
+                  "Existing platforms lacked personalization.",
+                ],
+                goals: ["To create a seamless and personalized e-commerce experience.",],
+                opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+            },
+            snapshots: [
+                {
+                  imageUrl: "/PakamCover.png",
+                  description: [
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                  ]
+                },
+                {
+                  imageUrl: "/PakamCover1.png",
+                  description: [
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                  ]
+                },
+                {
+                  imageUrl: "/PakamCover2.png",
+                  description: [
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                  ]
+                },
+                {
+                  imageUrl: "/PakamCover3.png",
+                  description: [
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                    "Homepage showcasing featured eco-friendly products.",
+                  ]
+                },
+            ],
           },
           {
             heading: "Portfolio Website",
             headingBg: '#081809',
+            btnBg: '#43C949',
             headingTextColor: '#42C447',
-            image: "/Pakam 2.png",
+            headerImage: "/PakamHeaderImage2.png",
+            smallImage: "/PakamSmall2.png",
             tags: ["React", "Tailwind CSS", "Next.js"],
             liveLink: "https://ecommerce.com",
             slug: "portfolio",
+            projectOverview: {
+                backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                problems: [
+                  "Users found it difficult to locate eco-friendly products.",
+                  "Existing platforms lacked personalization.",
+                ],
+                goals: ["To create a seamless and personalized e-commerce experience.",],
+                opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+            },
+            snapshots: [
+              {
+                imageUrl: "/PakamCover.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover1.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover2.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover3.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+            ],
           },
         ],
     },
@@ -54,20 +165,112 @@ export const projectData: AccordionData[] = [
             {
                 heading: "Banking Website",
                 headingBg: '#101A1E',
+                btnBg: '#43C949',
                 headingTextColor: '#89D9F9',
-                image: "/Pakam 2.png",
+                headerImage: "/PakamHeaderImage.png",
+                smallImage: "/PakamSmall.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
                 slug: "banking",
+                projectOverview: {
+                    backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                    problems: [
+                      "Users found it difficult to locate eco-friendly products.",
+                      "Existing platforms lacked personalization.",
+                    ],
+                    goals: ["To create a seamless and personalized e-commerce experience.",],
+                    opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                    solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+                },
+                snapshots: [
+                  {
+                    imageUrl: "/PakamCover.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover1.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover2.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover3.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                ],
             },
             {
                 heading: "Police Website",
                 headingBg: '#101A1E',
+                btnBg: '#43C949',
                 headingTextColor: '#89D9F9',
-                image: "/Pakam 1.png",
+                headerImage: "/PakamHeaderImage.png",
+                smallImage: "/PakamSmall.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
                 slug: "police",
+                projectOverview: {
+                    backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                    problems: [
+                      "Users found it difficult to locate eco-friendly products.",
+                      "Existing platforms lacked personalization.",
+                    ],
+                    goals: ["To create a seamless and personalized e-commerce experience.",],
+                    opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                    solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+                },
+                snapshots: [
+                  {
+                    imageUrl: "/PakamCover.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover1.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover2.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover3.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                ],
             },
         ],
     },
@@ -77,20 +280,112 @@ export const projectData: AccordionData[] = [
           {
             heading: "E-Commerce Website",
             headingBg: '#171E0A',
+            btnBg: '#43C949',
             headingTextColor: '#C7FC56',
-            image: "/Pakam 1.png",
+            headerImage: "/PakamHeaderImage.png",
+            smallImage: "/PakamSmall.png",
             tags: ["React", "Tailwind CSS", "Next.js", "Figma", "Vercel"],
             liveLink: "https://ecommerce.com",
             slug: "wecareEcommerce",
+            projectOverview: {
+                backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                problems: [
+                  "Users found it difficult to locate eco-friendly products.",
+                  "Existing platforms lacked personalization.",
+                ],
+                goals: ["To create a seamless and personalized e-commerce experience.",],
+                opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+            },
+            snapshots: [
+              {
+                imageUrl: "/PakamCover.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover1.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover2.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover3.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+            ],
           },
           {
             heading: "Portfolio Website",
             headingBg: '#081809',
+            btnBg: '#43C949',
             headingTextColor: '#42C447',
-            image: "/Pakam 2.png",
+            headerImage: "/PakamHeaderImage.png",
+            smallImage: "/PakamSmall.png",
             tags: ["React", "Tailwind CSS", "Next.js"],
             liveLink: "https://ecommerce.com",
             slug: "wecarePortfolio",
+            projectOverview: {
+                backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                problems: [
+                  "Users found it difficult to locate eco-friendly products.",
+                  "Existing platforms lacked personalization.",
+                ],
+                goals: ["To create a seamless and personalized e-commerce experience.",],
+                opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+            },
+            snapshots: [
+              {
+                imageUrl: "/PakamCover.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover1.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover2.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+              {
+                imageUrl: "/PakamCover3.png",
+                description: [
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                  "Homepage showcasing featured eco-friendly products.",
+                ]
+              },
+            ],
           },
         ],
     },
@@ -100,20 +395,112 @@ export const projectData: AccordionData[] = [
             {
                 heading: "Banking Website",
                 headingBg: '#101A1E',
+                btnBg: '#43C949',
                 headingTextColor: '#89D9F9',
-                image: "/Pakam 2.png",
+                headerImage: "/PakamHeaderImage.png",
+                smallImage: "/PakamSmall.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
                 slug: "errandBoxBanking",
+                projectOverview: {
+                    backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                    problems: [
+                      "Users found it difficult to locate eco-friendly products.",
+                      "Existing platforms lacked personalization.",
+                    ],
+                    goals: ["To create a seamless and personalized e-commerce experience.",],
+                    opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                    solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+                },
+                snapshots: [
+                  {
+                    imageUrl: "/PakamCover.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover1.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover2.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover3.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                ],
             },
             {
                 heading: "Police Website",
                 headingBg: '#101A1E',
+                btnBg: '#43C949',
                 headingTextColor: '#89D9F9',
-                image: "/Pakam 1.png",
+                headerImage: "/PakamHeaderImage.png",
+                smallImage: "/PakamSmall.png",
                 tags: ["HTML", "CSS", "JavaScript"],
                 liveLink: "https://portfolio.com",
                 slug: "errandBoxPolice",
+                projectOverview: {
+                    backgroundInfo: "This project involved building an e-commerce platform for sustainable products.",
+                    problems: [
+                      "Users found it difficult to locate eco-friendly products.",
+                      "Existing platforms lacked personalization.",
+                    ],
+                    goals: ["To create a seamless and personalized e-commerce experience.",],
+                    opportunity: ["The rise in demand for sustainable and eco-friendly products.",],
+                    solutions: ["A platform designed to cater to eco-conscious customers with personalized recommendations.",],
+                },
+                snapshots: [
+                  {
+                    imageUrl: "/PakamCover.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover1.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover2.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                  {
+                    imageUrl: "/PakamCover3.png",
+                    description: [
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                      "Homepage showcasing featured eco-friendly products.",
+                    ]
+                  },
+                ],
             },
         ],
     },
