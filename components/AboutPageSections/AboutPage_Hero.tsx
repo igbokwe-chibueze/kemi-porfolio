@@ -19,7 +19,7 @@ const AboutPage_Hero = ({
         <div className="main-container">
             <div className="lg:grid lg:grid-cols-5 lg:gap-12 lg:items-center">
                 {/* Profile Picture */}
-                <div className="lg:col-span-2 relative w-full h-[340px] lg:h-[450px] overflow-hidden">
+                <div className="lg:col-span-2 relative w-full h-[300px] lg:h-[450px] overflow-hidden">
                     <Image
                         src={profilePicture}
                         alt={`${name}'s Profile Picture`}

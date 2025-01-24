@@ -15,7 +15,7 @@ type NavLink = {
 // Define the props for the NavLinks component
 type NavLinksProps = {
   data: NavLink[]; // Array of navigation links
-  toggleNavLinks: () => void; // Function to toggle nav visibility
+  toggleNavLinks?: () => void; // Function to toggle nav visibility
 };
 
 // Define the download function
@@ -92,7 +92,7 @@ const NavLinks = ({ data, toggleNavLinks }: NavLinksProps) => {
           {link.isDownload ? (
             <button
               onClick={() => {
-                //toggleNavLinks(); //commenting this would make clicking the download wont close the nav menu. But i was getting an error with it.
+                //toggleNavLinks(); //commenting this out makes clicking the download wont close the nav menu. I want it to close the menu But i was getting an error with it.
                 handleDownloadClick();
               }}
               className={`group flex justify-center items-center py-6 lg:py-10 px-4 w-full rounded-full 

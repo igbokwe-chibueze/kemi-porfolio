@@ -6,7 +6,7 @@ const layout = ({children}: {children: React.ReactNode}) => {
     return (
       <>
         <Navbar/>
-        <div className='bg-gray-100 dark:bg-night-blue pt-20'>
+        <div className='bg-gray-100 dark:bg-night-blue pt-10 lg:pt-20'>
           {children}
         </div>
         <JumpToSection/>

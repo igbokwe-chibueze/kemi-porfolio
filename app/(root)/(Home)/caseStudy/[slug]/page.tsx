@@ -23,34 +23,33 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
   return (
     <div className=" lg:min-h-screen">
       <div className="py-8 lg:py-12">
-        <div className="space-y-12">
+        <div className="space-y-1">
           {/* <h1 className="header-one">
             See {slug}
           </h1> */}
 
           {selectedItem ? (
-            <>
-              <div className="relative w-full h-[600px]">
+            <div className="space-y-8 lg:space-y-20">
+              <div className="relative w-full h-[220px] lg:h-[600px]">
                 <Image
                   src={selectedItem.headerImage}
                   alt={selectedItem.heading}
                   priority={true}
                   fill
-                  //sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{
                     objectFit: 'cover',
                   }}
                 />
               </div>
 
-              <div className=" main-container space-y-10 lg:space-y-20">
+              <div className=" main-container space-y-8 lg:space-y-20">
                 <h1 className="font-monument-grotesk text-4xl md:text-5xl lg:text-[115px] font-normal 
                   tracking-tight leading-none text-gray-900 dark:text-white"
                 >
                   Background Information
                 </h1>
 
-                <div className="lg:grid lg:grid-cols-7 lg:gap-40">
+                <div className=" space-y-4 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-40">
                   <div className="lg:col-span-2 w-44 lg:w-auto">
                     <div className="group px-5 py-2 flex justify-center items-center rounded-full 
                       bg-[var(--headingBg)] hover:bg-[#FAB041]"
@@ -63,7 +62,7 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 space-y-4 lg:space-y-14">
+                  <div className="lg:col-span-5 space-y-8 lg:space-y-14">
                     <h2 className="font-gT-WalsheimPro text-xl lg:text-5xl font-normal 
                       text-left tracking-tight text-gray-900 dark:text-white"
                     >
@@ -91,7 +90,7 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                 <div className="space-y-20">
                   {selectedItem.snapshots?.map((snapshot, index) => (
                     <div key={index} className="space-y-10">
-                      <div className="relative w-full h-[600px]">
+                      <div className="relative w-full h-[220px] lg:h-[600px]">
                         <Image
                           src={snapshot.imageUrl}
                           alt={snapshot.imageUrl}
@@ -114,12 +113,12 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                 </div>
 
               </div>
-            </>
+            </div>
           ) : (
             <p>No data available</p>
           )}
 
-          <div className=" px-48">
+          <div className=" lg:px-48">
             <RandomProject/>
           </div>
 

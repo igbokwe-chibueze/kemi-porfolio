@@ -39,9 +39,9 @@ const AboutPage_Body = () => {
 
                 <div className="lg:col-span-5 space-y-4 lg:space-y-14">
                     <p className="font-gT-WalsheimPro text-2xl lg:text-[40px] font-normal 
-                        tracking-tight lg:leading-[50px] text-gray-900 dark:text-white"
+                        tracking-tight text-pretty lg:leading-[50px] text-gray-900 dark:text-white"
                     >
-                        I effectively collaborate with engineers and cross-functional teams to design and 
+                        I effectively collaborate with engineers and cross-functional teams to design and <br/> 
                         <small className=" px-2 text-xl lg:text-4xl text-[#FAB041] bg-yellow-950 rounded-full mx-1">deliver seamless websites </small>
                         and applications for companies and individuals.
                     </p>

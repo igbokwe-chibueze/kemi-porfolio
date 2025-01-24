@@ -22,14 +22,18 @@ const RandomProject: React.FC = () => {
       >
         Still curious...
       </h2>
-
-      <Image
-        src={randomProject.smallImage}
-        alt={randomProject.heading}
-        width={781.88}
-        height={556}
-        className="w-full object-cover"
-      />
+      
+      <div className="relative w-full h-[220px] lg:h-[600px]">
+        <Image
+          src={randomProject.smallImage}
+          alt={randomProject.heading}
+          priority={true}
+          fill
+          style={{
+            objectFit: 'cover',
+          }}
+        />
+      </div>
 
       <Link 
         href={randomProject.slug} target="_blank" 
