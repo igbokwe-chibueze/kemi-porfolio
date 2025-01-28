@@ -111,7 +111,7 @@ const NavLinks = ({ data, toggleNavLinks }: NavLinksProps) => {
               </span>
             </button>
           ) : link.href.startsWith('http') || link.href.startsWith('mailto') ? (
-            <a
+            <Link
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -130,7 +130,7 @@ const NavLinks = ({ data, toggleNavLinks }: NavLinksProps) => {
               >
                 {link.text}
               </span>
-            </a>
+            </Link>
           ) : (
             <Link
               href={`/${link.href}`}

@@ -9,6 +9,14 @@ export const navLinks = [
   { href: '', text: 'DOWNLOAD CV', icon: <HashtagIcon />, hoverColor: '#38D9FD', isDownload: true },
 ];
 
+export const sectionLinks = [
+  { id: "heroSection", name: "Hero"},
+  { id: "aboutSection", name: "About"},
+  { id: "projectSection", name: "Projects"},
+  { id: "slideSection", name: "Slides"},
+];
+
+
 //************Project */
 type ProjectOverview = {
     backgroundInfo: string;

@@ -3,13 +3,13 @@ import Link from "next/link"
 
 const About = () => {
   return (
-    <section id="aboutSection" className=" lg:min-h-screen">
+    <section id="aboutSection" className="min-h-[70vh] lg:min-h-screen">
       <div className=" main-container">
         <div className="space-y-2 lg:space-y-8">
           <h2 className="lg:pl-64 font-gT-WalsheimPro text-xl lg:text-6xl font-normal 
             text-pretty tracking-tight text-gray-900 dark:text-white"
           >
-            Driven by a passion for innovative product, 
+            Driven by a passion for innovative products, 
             I thrive at the intersection of creativity and 
             <small className=" px-2 text-[#FAB041] bg-yellow-950 rounded-full mx-1">user-centered solutions. </small> <br/>
             I craft intuitive and memorable product experiences that delight users and I ask the necessary 
