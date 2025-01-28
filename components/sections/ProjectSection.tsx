@@ -7,7 +7,7 @@ const Projects = () => {
         <div className=" main-container space-y-10 lg:space-y-20">
           <div className="space-y-8">
             <h1 className="header-one">
-              Selected Projectsz
+              Selected Projects
             </h1>
 
             <p className="font-gT-WalsheimPro text-xl lg:text-5xl font-normal 

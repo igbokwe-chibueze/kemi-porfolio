@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="flex flex-wrap justify-between items-center max-w-screen-xl mx-auto">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" onClick={toggleNavLinks}>
           {/* Put Logo here */}
           {/* <Image
             src={"/creativa.png"}
