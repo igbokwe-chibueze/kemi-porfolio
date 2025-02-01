@@ -1,6 +1,5 @@
 
-//import GooeyEffect from "@/components/GooeyEffect"
-import FloatingNav from "@/components/navigation/FloatingNav"
+import GooeyEffect from "@/components/GooeyEffect"
 import { AboutSection, HeroSection, ProjectsSection, SlideSection } from "@/components/sections"
 
 
@@ -11,8 +10,7 @@ const page = () => {
       <AboutSection/>
       <ProjectsSection/>
       <SlideSection/>
-      <FloatingNav/>
-      {/* <GooeyEffect/> */}
+      <GooeyEffect/>
     </>
   )
 }

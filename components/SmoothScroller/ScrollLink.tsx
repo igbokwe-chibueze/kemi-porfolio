@@ -20,7 +20,7 @@ const ScrollLink = ({
     smoothScroll = true,
     threshold = 0.6,
     children,
-    activeClassName = "bg-red-600 text-white", // Default styling for active state
+    activeClassName = "", // Default styling for active state
     className = "", // Default styling for inactive state
 }: ScrollLinkProps) => {
     const [isActive, setIsActive] = useState(false); // State to track if the link is active
@@ -119,13 +119,11 @@ const ScrollLink = ({
     return (
         <span
             onClick={handleScroll} // Scroll to the target section when clicked
-            className={`cursor-pointer ${className} ${
-                isActive ? activeClassName : "" // Apply active styling if the link is active
-            }`}
+            className={`cursor-pointer ${isActive ? activeClassName : className}`}
         >
-            {children} {/* Render the content passed as children */}
+            {children}
         </span>
     );
 };
 
-export default ScrollLink; // Export the component for use in other parts of the application
+export default ScrollLink;

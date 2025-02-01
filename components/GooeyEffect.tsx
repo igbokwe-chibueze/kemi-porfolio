@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { HandIcon, SmileIcon } from '@/constants/Icons';
+import {AnimatePresence, motion } from 'framer-motion';
+import { MenuIcon } from '@/constants/Icons';
+import { sectionLinks } from '@/constants/Data';
+import ScrollLink from './SmoothScroller/ScrollLink';
 
-export default function GooeyEffect() {
+export default function GooeyEffect({stiffness= 90}) {
   const [isSeparated, setIsSeparated] = useState(false);
 
   const toggleSeparation = () => {
@@ -12,13 +14,13 @@ export default function GooeyEffect() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <div className="relative w-[300px] h-[200px] mb-4">
+    <div className="fixed bottom-36 right-0 left-0 z-30 lg:hidden py-2.5 pointer-events-none">
+      <div className="relative">
         <svg
-          width="300"
+          width="600"
           height="200"
-          viewBox="0 0 300 200"
-          className="absolute top-0 left-0"
+          viewBox="0 0 600 200"
+          className="pointer-events-none"
           aria-hidden="true"
         >
           <defs>
@@ -33,46 +35,69 @@ export default function GooeyEffect() {
             </filter>
           </defs>
           <g filter="url(#gooey)">
-            {/* Fixed Square */}
-            <rect x="60" y="60" width="80" height="80" fill="black" />
+            {/* Fixed Circle */}
+            <rect x="20" y="100" width="40" height="40" fill="#0D0C13"
+              className="dark:fill-[#d1d5db]" />
+            
             {/* Mobile Square */}
             <motion.rect
-              x="60"
-              y="60"
-              width="80"
-              height="80"
-              fill="black"
-              initial={{ x: 0, opacity: 0 }}
-              animate={{ x: isSeparated ? 100 : 0, opacity: isSeparated ? 1 : 0 }}
-              transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+              x="20"
+              y="70"
+              width="280"
+              height="60"
+              fill="#0D0C13"
+              className="dark:fill-[#d1d5db]" 
+              initial={{ y: 0, opacity: 0, scaleX: 0  }}
+              animate={{ y: isSeparated ? -50 : 0, opacity: isSeparated ? 1 : 0, scaleX: 1  }}
+              transition={{ type: 'spring', stiffness, damping: 20 }}
+              style={{ transformOrigin: "left" }} 
             />
           </g>
         </svg>
         
-        <div className="absolute top-0 left-0 w-full h-full z-10">
+        <div className="absolute top-0 left-0 w-auto h-full z-10 pointer-events-auto">
           {/* Fixed Button */}
           <button
-            className="absolute top-[60px] left-[60px] w-[80px] h-[80px] flex flex-col items-center justify-center 
-            bg-transparent border-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 
-            focus:ring-opacity-50 rounded-lg"
+            className="absolute left-[20px] top-[100px] w-10 h-10 flex flex-col items-center justify-center 
+            bg-transparent border-none cursor-pointer rounded-full p-1"
             onClick={toggleSeparation}
             aria-label={isSeparated ? 'Combine squares' : 'Separate squares'}
           >
-            <SmileIcon className="text-white" size={40} />
-            <span className="text-gray-200 font-bold mt-1 text-xs">Fixed</span>
+            <MenuIcon className='text-white dark:text-gray-900'/>
           </button>
-          {/* Mobile Icon */}
-          <motion.div
-            className="absolute top-[60px] left-[60px] w-[80px] h-[80px] flex flex-col items-center justify-center 
-            pointer-events-none"
-            initial={{ x: 0, opacity: 0 }}
-            animate={{ x: isSeparated ? 100 : 0, opacity: isSeparated ? 1 : 0 }}
-            transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-          >
-            <HandIcon className="text-white" size={40} />
-            <span className="text-gray-200 font-bold mt-1 text-xs">Mobile</span>
-          </motion.div>
+
+          {/* Mobile Container */}
+          <AnimatePresence>
+            {isSeparated && (
+              <motion.div
+                key="mobile-menu"
+                className="absolute top-[70px] left-[20px] w-[280px] h-[60px] flex flex-col items-center justify-center 
+                  rounded-2xl"
+                initial={{ y: 0, opacity: 0, scaleX: 0  }}
+                animate={{ y: -50, opacity: 1, scaleX: 1  }}
+                exit={{ y: 0, opacity: 0, scaleX: 0  }}
+                transition={{ type: 'spring', stiffness, damping: 20 }}
+                style={{ transformOrigin: "left" }} 
+              >
+                <div className='flex flex-wrap justify-between items-center gap-4'>
+                  {sectionLinks.map((link) => (
+                    <div key={link.id} className='font-gT-WalsheimPro text-lg font-normal 
+                        tracking-tight lg:leading-[50px]'>
+                      <ScrollLink targetId={link.id} 
+                        offset={-40} duration={700} smoothScroll={true} threshold={0.4}
+                        className="text-white dark:text-gray-900"
+                        activeClassName="text-blue-300 dark:text-red-600 transition-all duration-300"
+                      >
+                        <button>{link.name}</button>
+                      </ScrollLink>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
+        
       </div>
     </div>
   );
