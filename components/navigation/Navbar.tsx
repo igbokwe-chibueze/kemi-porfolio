@@ -13,11 +13,11 @@ const Navbar = () => {
   // State to control the visibility of the navigation links
   const [showNavLinks, setShowNavLinks] = useState(false);
 
-  // Ref to the nav element to handle clicks outside the navigation bar
+  // Ref to the nav element to handle clicks outside the nav menu
   // Create a reference to store the <nav> element using React's `useRef` hook.
   // - Type: The `useRef` is typed to `HTMLElement | null` because it will hold a reference 
-  //   to an HTML element (like the <nav>) or `null` initially before the element is rendered.
-  const navRef = useRef<HTMLElement | null>(null);
+  //   to an HTML element (like the <div>) or `null` initially before the element is rendered.
+  const divRef = useRef<HTMLDivElement | null>(null);
 
   // Function to toggle the visibility of the navigation links
   const toggleNavLinks = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
     // Check if the click is outside the nav element or if the Escape key is pressed
     // See notes/comments
     if (
-      (navRef.current && !navRef.current.contains(event.target as Node)) || 
+      (divRef.current && !divRef.current.contains(event.target as Node)) || 
       (event instanceof KeyboardEvent && event.key === 'Escape')
     ) {
       setShowNavLinks(false); // Hide the navigation links
@@ -50,13 +50,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav ref={navRef} className=" fixed top-0 right-0 left-0 z-30 px-4 lg:px-6 py-2.5 
+    <nav className=" fixed top-0 right-0 left-0 z-30 px-4 lg:px-6 py-2.5 
       bg-gray-200 dark:bg-[#0D0C13] border-b border-[#100F14] "
     >
       <div className="flex flex-wrap justify-between items-center max-w-screen-xl mx-auto">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center" onClick={toggleNavLinks}>
+        <Link href="/" className="flex items-center">
           {/* Put Logo here */}
           {/* <Image
             src={"/creativa.png"}
@@ -97,7 +97,9 @@ const Navbar = () => {
         </div>
 
         {/* Links */}
-        <div className={`w-full ${showNavLinks ? 'block' : 'hidden'} overflow-y-auto max-h-screen no-scrollbar`}>
+        <div ref={divRef} 
+          className={`w-full ${showNavLinks ? 'block' : 'hidden'} overflow-y-auto max-h-screen no-scrollbar`}
+        >
           <NavLinks data={navLinks} toggleNavLinks={toggleNavLinks}/>
         </div>
       </div>
