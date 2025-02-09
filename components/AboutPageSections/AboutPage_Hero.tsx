@@ -1,7 +1,9 @@
+import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
 
 interface AboutPage_HeroProps {
-  profilePicture: string;
+  profilePicture: SanityImageSource;
   salutation: string;
   name: string;
   intro: string;
@@ -13,6 +15,7 @@ const AboutPage_Hero = ({
   name,
   intro,
 }: AboutPage_HeroProps) => {
+    const imageUrl = urlFor(profilePicture).url()
   return (
     <section className="lg:min-h-screen">
 
@@ -21,10 +24,10 @@ const AboutPage_Hero = ({
                 {/* Profile Picture */}
                 <div className="lg:col-span-2 relative w-full h-[300px] lg:h-[450px] overflow-hidden">
                     <Image
-                        src={profilePicture}
+                        src={imageUrl}
                         alt={`${name}'s Profile Picture`}
-                        layout="fill" // Ensures the image takes the entire container space
-                        objectFit="cover" // Crops the image to cover the container
+                        fill // Ensures the image takes the entire container space
+                        style={{ objectFit: "cover" }} // Crops the image to cover the container
                         priority
                         className="rounded-2xl lg:rounded-[90px]"
                     />

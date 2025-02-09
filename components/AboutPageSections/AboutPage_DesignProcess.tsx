@@ -42,11 +42,11 @@ const AboutPage_DesignProcess = ({data}: DesignProcessProps) => {
                         tracking-tight leading-9 lg:leading-[50px] text-gray-900 dark:text-white">
                             <span 
                                 className="bg-[var(--headingBg)] rounded-full"
-                                style={{ '--headingBg': process.headingBg } as React.CSSProperties}
+                                style={{ '--headingBg': process.headingBg || '#101A1E', } as React.CSSProperties}
                             >
                                 <small 
                                     className=" px-1 py-2 text-2xl lg:text-[40px] text-[var(--headingTextColor)] rounded-full mx-1"
-                                    style={{ '--headingTextColor': process.headingTextColor } as React.CSSProperties}
+                                    style={{ '--headingTextColor': process.headingTextColor || '#38D9FD' } as React.CSSProperties}
                                 >
                                     {process.topic}:
                                 </small>
