@@ -1,4 +1,4 @@
-// queries.js (or within your page file)
+// queries.ts
 import { groq } from "next-sanity";
 
 export const profileQuery = groq`
@@ -11,8 +11,39 @@ export const profileQuery = groq`
     salutation,
     name,
     intro,
+    emailContact{
+      email,
+      hoverColor,
+      icon{
+        asset->{
+          url
+        }
+      }
+    },
     designProcess[]{
       ...,
+    },
+    socialLinks[]{
+      ...,
+      icon{
+        asset->{
+          url
+        }
+      }
     }
   }
 `
+
+export const selectedExperimentsQuery = groq`
+  *[_type == "selectedExperiments"]{
+    experiments[]{
+      image{
+        asset->{
+          _id,
+          url
+        }
+      }
+    }
+  }
+`;
+

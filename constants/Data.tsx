@@ -1,12 +1,8 @@
-import { BubbleIcon, FlashIcon, HandIcon, HashtagIcon, SmileIcon } from "./Icons";
+import { FlashIcon, HandIcon } from "./Icons";
 
 export const navLinks = [
   { href: 'work', text: 'WORK', icon: <FlashIcon/>, hoverColor: '#FAB041' },
   { href: 'about', text: 'ABOUT', icon: <HandIcon/>, hoverColor: '#FAE741' },
-  { href: 'mailto:igbokwechibueze@yahoo.co.uk', text: 'CONTACT', icon: <SmileIcon/>, hoverColor: '#FAE741' },
-  { href: 'https://www.linkedin.com/in/amelia-kemi-olufowobi', text: 'LINKEDIN', icon: <BubbleIcon/>, hoverColor: '#2459E0' },
-  { href: 'https://twitter.com/Amelia_olu?s=09', text: 'X (TWITTER)', icon: <HashtagIcon/>, hoverColor: '#38D9FD' },
-  { href: '', text: 'DOWNLOAD CV', icon: <HashtagIcon />, hoverColor: '#38D9FD', isDownload: true },
 ];
 
 export const sectionLinks = [
@@ -520,7 +516,7 @@ type Experiments = {
 
 export const selectedExperiments: Experiments[] = Array.from({ length: 27 }, (_, index) => ({
     image: `/SlideImages/SlideImage (${index + 1}).png`,
-}));
+})); // Create an array-like object with 27 slots (indices 0 to 26)
 
 
 //************Profile */

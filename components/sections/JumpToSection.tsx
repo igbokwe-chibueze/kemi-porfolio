@@ -1,15 +1,19 @@
-import { navLinks } from "@/constants/Data"
 import NavLinks from "../navigation/NavLinks"
+import { client } from "@/sanity/lib/client"
+import { profileQuery } from "@/sanity/lib/queries"
 
-const JumpToSection = () => {
+const JumpToSection = async () => {
+  // Fetch the profile data from Sanity
+    const profileData = await client.fetch(profileQuery)
   return (
     <section id="jumpToSection" className=" min-h-screen bg-gray-200 dark:bg-night-blue">
         <div className=" main-container space-y-10 lg:space-y-14 ">
-            <h1 className="header-one">
-                Jump to
-            </h1>
+          <h1 className="header-one">
+            Jump to
+          </h1>
 
-            <NavLinks data={navLinks} />
+          {/* Only render NavLinks when profileData is available */}
+          {profileData ? <NavLinks profile={profileData}/> : <p>Loading...</p>}
         </div>
     </section>
   )
