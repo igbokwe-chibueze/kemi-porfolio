@@ -36,6 +36,7 @@ export const profileQuery = groq`
 
 export const selectedExperimentsQuery = groq`
   *[_type == "selectedExperiments"]{
+    sectionName,
     experiments[]{
       image{
         asset->{
