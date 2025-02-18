@@ -1,9 +1,19 @@
 import Accordion from "@/components/Accordion"
 import ImageSlider from "@/components/ImageSlider"
 import { projectData } from "@/constants/Data"
+import { client } from "@/sanity/lib/client";
+import { selectedExperimentsQuery } from "@/sanity/lib/queries";
+import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
 
 
-const page = () => {
+const page = async () => {
+
+  // Fetch the selected experiments data with an explicit type.
+  const selectedData = await client.fetch<SelectedExperimentsType[]>(selectedExperimentsQuery);
+
+  // Flatten all images from all experiments into a single array.
+  const images = selectedData.flatMap(doc => doc.experiments.map(exp => exp.image));
+
   return (
     <div className=" lg:min-h-screen">
       <div className=" main-container space-y-10 lg:space-y-20">
@@ -31,9 +41,9 @@ const page = () => {
 
         {/* Slides */}
         <div className="space-y-4 lg:space-y-8">
-          <ImageSlider itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
-          <ImageSlider itemsWrapperClassName='animate-move-left [animation-duration:40s] hover:[animation-play-state:paused]'/>
-          <ImageSlider itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
+          <ImageSlider images={images} itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
+          <ImageSlider images={images} itemsWrapperClassName='animate-move-left [animation-duration:40s] hover:[animation-play-state:paused]'/>
+          <ImageSlider images={images} itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
         </div>
       </div>
     </div>
