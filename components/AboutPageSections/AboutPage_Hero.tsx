@@ -1,20 +1,13 @@
 import { urlFor } from "@/sanity/lib/image";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { ProfileType } from "@/types/profileTypes";
 import Image from "next/image";
-
-interface AboutPage_HeroProps {
-  profilePicture: SanityImageSource;
-  salutation: string;
-  name: string;
-  intro: string;
-}
 
 const AboutPage_Hero = ({
   profilePicture,
   salutation,
   name,
   intro,
-}: AboutPage_HeroProps) => {
+}: ProfileType) => {
     const imageUrl = urlFor(profilePicture).url()
   return (
     <section className="lg:min-h-screen">

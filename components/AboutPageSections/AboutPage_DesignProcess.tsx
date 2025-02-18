@@ -1,16 +1,8 @@
-import { DesignProcess } from "@/constants/Data";
 import { ArrowDownIcon } from "@/constants/Icons";
+import { DesignProcessItem } from "@/types/profileTypes";
 
-// interface DesignProcessProps {
-//     data: {
-//         topic: string;
-//         body: string;
-//         headingBg: string;
-//         headingTextColor: string;
-//     }[];
-// }
 interface DesignProcessProps {
-    data: DesignProcess[];
+    data: DesignProcessItem[];
 }
 
 const AboutPage_DesignProcess = ({data}: DesignProcessProps) => {

@@ -526,12 +526,6 @@ export interface DesignProcess {
     headingBg: string;
     headingTextColor: string;
 };
-// type DesignProcess = {
-//     topic: string;
-//     body: string;
-//     headingBg: string;
-//     headingTextColor: string;
-// };
 
 export interface ProfileData {
     profilePicture: string;
