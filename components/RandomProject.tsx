@@ -1,19 +1,34 @@
-import { projectData } from "@/constants/Data";
+"use client";
+
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { projectsQuery } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { ProjectItem, ProjectsType } from "@/types/projectsTypes";
 
-const RandomProject: React.FC = () => {
-  // Function to get a random project
-  const getRandomProject = () => {
-    // Flatten the items from all projects
-    const allItems = projectData.flatMap((project) => project.items);
-    // Get a random item
-    const randomIndex = Math.floor(Math.random() * allItems.length);
-    return allItems[randomIndex];
-  };
+const RandomProject = () => {
+  const [randomProject, setRandomProject] = useState<ProjectItem | null>(null);
 
-  const randomProject = getRandomProject();
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const projectsData: ProjectsType[] = await client.fetch(projectsQuery);
+      // Use flatMap to combine all project items into a single array.
+      const allItems: ProjectItem[] = projectsData.flatMap((doc) => doc.items);
+    
+      if (allItems.length > 0) {
+        const randomIndex = Math.floor(Math.random() * allItems.length);
+        setRandomProject(allItems[randomIndex]);
+      }
+    };
+    
+    fetchProjects();
+  }, []);
+
+  if (!randomProject) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="p-4 text-center space-y-8">
@@ -25,13 +40,11 @@ const RandomProject: React.FC = () => {
       
       <div className="relative w-full h-[220px] lg:h-[600px]">
         <Image
-          src={randomProject.smallImage}
+          src={urlFor(randomProject.smallImage).url()}
           alt={randomProject.heading}
-          priority={true}
+          priority
           fill
-          style={{
-            objectFit: 'cover',
-          }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
 
