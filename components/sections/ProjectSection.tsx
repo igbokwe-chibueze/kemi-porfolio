@@ -1,7 +1,12 @@
-import { projectData } from "@/constants/Data"
 import Accordion from "../Accordion"
+import { client } from "@/sanity/lib/client"
+import { projectsQuery } from "@/sanity/lib/queries"
 
-const Projects = () => {
+const Projects = async () => {
+
+  // Fetch the profile data from Sanity
+  const projects = await client.fetch(projectsQuery)
+
   return (
     <section id="projectSection" className="min-h-[70vh] lg:min-h-screen">
         <div className=" main-container space-y-10 lg:space-y-20">
@@ -19,7 +24,7 @@ const Projects = () => {
 
           {/* Accordion */}
           <div>
-            <Accordion data={projectData} />
+            <Accordion data={projects} />
           </div>
         </div>
     </section>

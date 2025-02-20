@@ -1,6 +1,4 @@
-import Accordion from "@/components/Accordion";
 import ImageSlider from "@/components/ImageSlider";
-import { projectData } from "@/constants/Data";
 import { selectedExperimentsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
@@ -28,11 +26,6 @@ const Page = async () => {
           >
             Some opportunities and <br /> projects that I’m proud of!
           </p>
-        </div>
-
-        {/* Accordion */}
-        <div>
-          <Accordion data={projectData} />
         </div>
 
         {/* Slides */}

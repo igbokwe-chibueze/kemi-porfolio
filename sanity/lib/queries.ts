@@ -48,3 +48,44 @@ export const selectedExperimentsQuery = groq`
   }
 `;
 
+
+export const projectsQuery = groq`
+  *[_type == "projects"]{
+    title,
+    items[]{
+      heading,
+      headingBg,
+      btnBg,
+      headingTextColor,
+      headerImage{
+        asset->{
+          url
+        }
+      },
+      smallImage{
+        asset->{
+          url
+        }
+      },
+      tags,
+      liveLink,
+      "slug": slug.current, // ✅ Extracts only the 'current' string
+      projectOverview{
+        backgroundInfo,
+        problems,
+        goals,
+        opportunity,
+        solutions
+      },
+      snapshots[]{
+        imageUrl{
+          asset->{
+            url
+          }
+        },
+        description
+      }
+    }
+  }
+`;
+

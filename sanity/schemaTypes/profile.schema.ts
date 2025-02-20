@@ -1,3 +1,5 @@
+//profile.schema.ts
+
 import {defineField, defineType} from 'sanity'
 
 const profileData = defineType({

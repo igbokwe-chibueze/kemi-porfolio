@@ -1,16 +1,17 @@
 "use client"
-
-import { AccordionData } from "@/constants/Data";
 import { ArrowDownIcon } from "@/constants/Icons";
+import { urlFor } from "@/sanity/lib/image";
+import { ProjectsType } from "@/types/projectsTypes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 interface AccordionProps {
-    data: AccordionData[];
+  data: ProjectsType[];
 }
 
 const Accordion = ({ data }: AccordionProps) => {
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -67,7 +68,7 @@ const Accordion = ({ data }: AccordionProps) => {
 
                     {/* Image */}
                     <Image
-                      src={item.smallImage}
+                      src={urlFor(item.smallImage).url()}
                       alt={item.heading}
                       width={781.88}
                       height={556}
@@ -78,7 +79,7 @@ const Accordion = ({ data }: AccordionProps) => {
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-2">
                       {/* Tags */}
                       <div className="flex flex-wrap gap-2 lg:gap-4 w-full lg:w-[446px] mb-4 lg:mb-0">
-                        {item.tags.map((tag, tagIndex) => (
+                        {item.tags?.map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
                             className="px-3 py-1 bg-[#2E2E2E] dark:bg-[#FEF6E7] rounded-full 

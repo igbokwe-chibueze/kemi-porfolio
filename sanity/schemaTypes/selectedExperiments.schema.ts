@@ -1,3 +1,5 @@
+//selectedExperiments.schema.ts
+
 import { defineField, defineType } from "sanity";
 
 const selectedExperiments = defineType({
