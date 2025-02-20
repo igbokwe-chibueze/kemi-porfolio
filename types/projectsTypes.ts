@@ -36,7 +36,7 @@ export interface ProjectItem {
   tags?: string[];
   liveLink?: string;
   slug: string;
-  projectOverview: ProjectOverview;
+  projectOverview?: ProjectOverview;
   snapshots?: Snapshot[];
 }
 
