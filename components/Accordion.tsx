@@ -67,13 +67,16 @@ const Accordion = ({ data }: AccordionProps) => {
                     </div>
 
                     {/* Image */}
-                    <Image
-                      src={urlFor(item.smallImage).url()}
-                      alt={item.heading}
-                      width={781.88}
-                      height={556}
-                      className="rounded-lg shadow-md border"
-                    />
+                    <div className='relative w-[359px] h-[255.81px]'>
+                      <Image
+                        src={urlFor(item.smallImage).url()}
+                        alt={item.heading}
+                        fill
+                        loading="lazy"
+                        style={{ objectFit: "cover" }}
+                        className="rounded-lg shadow-md border"
+                      />
+                    </div>
 
                     {/* Bottom */}
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-2">

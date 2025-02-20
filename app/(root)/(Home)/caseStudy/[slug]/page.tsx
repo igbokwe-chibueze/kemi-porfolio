@@ -1,39 +1,44 @@
 import DetailsPageAccordion from "@/components/DetailsPageAccordion";
 import RandomProject from "@/components/RandomProject";
-import { projectData } from "@/constants/Data";
 import { ArrowDownIcon } from "@/constants/Icons";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { projectBySlugQuery } from "@/sanity/lib/queries";
+import { Snapshot } from "@/types/projectsTypes";
 import Image from "next/image";
 
 type PageParams = {
-    slug: string;
-  };
+  slug: string;
+};
 
 const page = async ({ params }: { params:  Promise<PageParams> }) => {
+
   const resolvedParams = await params; // Await the promise
 
   const { slug } = resolvedParams; // Access 'slug' from the resolved params
 
-  // Find the specific project and item using the slug
-  const project = projectData.find((project) =>
-    project.items.some((item) => item.slug === slug)
-  );
+  // Fetch the project data based on the slug
+  const data = await client.fetch(projectBySlugQuery, { slug });
 
-  const selectedItem = project?.items.find((item) => item.slug === slug);
+  if (!data || !data.project) {
+    return <div>Project not found</div>;
+  }
+
+  const project = data.project;
+  
 
   return (
     <div className=" lg:min-h-screen">
       <div className="py-8 lg:py-12 space-y-1">
-        {selectedItem ? (
+        {project ? (
           <div className="space-y-8 lg:space-y-20">
             <div className="relative w-full h-[220px] lg:h-[600px]">
               <Image
-                src={selectedItem.headerImage}
-                alt={selectedItem.heading}
-                priority={true}
+                src={urlFor(project.headerImage).url()}
+                alt={project.heading}
+                priority
                 fill
-                style={{
-                  objectFit: 'cover',
-                }}
+                style={{ objectFit: "cover" }}
               />
             </div>
 
@@ -48,7 +53,7 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                 <div className="lg:col-span-2 w-44 lg:w-auto">
                   <div className="group px-5 py-2 flex justify-center items-center rounded-full 
                     bg-[var(--headingBg)] hover:bg-[#FAB041]"
-                    style={{ '--headingBg': selectedItem.btnBg } as React.CSSProperties}
+                    style={{ '--headingBg': project.btnBg } as React.CSSProperties}
                   >
                     <ArrowDownIcon 
                       className={`text-black w-8 h-8 lg:w-24 lg:h-32
@@ -61,15 +66,15 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                   <h2 className="font-gT-WalsheimPro text-xl lg:text-5xl font-normal 
                     text-left tracking-tight text-gray-900 dark:text-white"
                   >
-                    {selectedItem.projectOverview?.backgroundInfo}
+                    {project.projectOverview?.backgroundInfo}
                   </h2>
 
                   <DetailsPageAccordion
                     data={{
-                      problems: selectedItem.projectOverview?.problems || [],
-                      goals: selectedItem.projectOverview?.goals || [],
-                      opportunity: selectedItem.projectOverview?.opportunity || [],
-                      solutions: selectedItem.projectOverview?.solutions || [],
+                      problems: project.projectOverview?.problems || [],
+                      goals: project.projectOverview?.goals || [],
+                      opportunity: project.projectOverview?.opportunity || [],
+                      solutions: project.projectOverview?.solutions || [],
                     }}
                   />
                 </div>
@@ -83,26 +88,28 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
               </h1>
 
               <div className="space-y-20">
-                {selectedItem.snapshots?.map((snapshot, index) => (
+                {project.snapshots?.map((snapshot: Snapshot, index: string) => (
                   <div key={index} className="space-y-10">
                     <div className="relative w-full h-[220px] lg:h-[600px]">
-                      <Image
-                        src={snapshot.imageUrl}
-                        alt={snapshot.imageUrl}
-                        priority={true}
-                        fill
-                        style={{
-                          objectFit: 'cover',
-                        }}
-                      />
+                      {snapshot.imageUrl && (
+                        <Image
+                          src={urlFor(snapshot.imageUrl).url()}
+                          alt={`Snapshot ${index + 1}`}
+                          priority
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      )}
                     </div>
-                    <p className="font-gT-WalsheimPro text-xl lg:text-3xl font-normal 
+                    <ul className="font-gT-WalsheimPro text-xl lg:text-3xl font-normal 
                       tracking-tight leading-none text-gray-900 dark:text-white space-y-2"
                     >
-                      {snapshot.description.map((desc, i) => (
+                      {(snapshot.description || []).map((desc: string, i: number) => (
                         <li key={i}>{desc}</li>
                       ))}
-                    </p>
+                      {/* This way, if snapshot.description is undefined, it falls back to an empty array[], 
+                      and the map operation will safely produce no items without causing a TypeScript error. */}
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -112,7 +119,6 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
         ) : (
           <p>No data available</p>
         )}
-
         <div className=" lg:px-48">
           <RandomProject/>
         </div>

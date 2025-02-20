@@ -89,3 +89,10 @@ export const projectsQuery = groq`
   }
 `;
 
+
+export const projectBySlugQuery = groq`
+  *[_type == "projects"]{
+    "project": items[slug.current == $slug][0]
+  }[0]
+`;
+
