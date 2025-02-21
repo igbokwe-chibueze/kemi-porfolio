@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     if (!slug) {
       revalidatePath("/");
       revalidatePath("/about");
-      revalidatePath("/projects");
+      revalidatePath("/work");
     } else {
       revalidatePath(`/caseStudy/${slug}`);
     }

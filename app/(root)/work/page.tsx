@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { selectedExperimentsQuery } from "@/sanity/lib/queries";
 import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
 
+export const revalidate = 0; // Ensures fresh data with on-demand revalidation
 
 const page = async () => {
 
