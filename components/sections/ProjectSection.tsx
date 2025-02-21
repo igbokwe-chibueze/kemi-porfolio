@@ -2,6 +2,8 @@ import Accordion from "../Accordion"
 import { client } from "@/sanity/lib/client"
 import { projectsQuery } from "@/sanity/lib/queries"
 
+export const revalidate = 0; // On-demand only
+
 const Projects = async () => {
 
   // Fetch the profile data from Sanity

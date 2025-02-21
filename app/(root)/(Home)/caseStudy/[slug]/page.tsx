@@ -1,3 +1,5 @@
+// app/(root)/(Home)/caseStudy/${item.slug}/page.tsx
+
 import DetailsPageAccordion from "@/components/DetailsPageAccordion";
 import RandomProject from "@/components/RandomProject";
 import { ArrowDownIcon } from "@/constants/Icons";
@@ -10,6 +12,8 @@ import Image from "next/image";
 type PageParams = {
   slug: string;
 };
+
+export const revalidate = 0; // On-demand only revalidation
 
 const page = async ({ params }: { params:  Promise<PageParams> }) => {
 
