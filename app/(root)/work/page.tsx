@@ -1,8 +1,7 @@
 import Accordion from "@/components/Accordion"
 import ImageSlider from "@/components/ImageSlider"
-import { projectData } from "@/constants/Data"
 import { client } from "@/sanity/lib/client";
-import { selectedExperimentsQuery } from "@/sanity/lib/queries";
+import { projectsQuery, selectedExperimentsQuery } from "@/sanity/lib/queries";
 import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
 
 export const revalidate = 0; // Ensures fresh data with on-demand revalidation
@@ -11,6 +10,8 @@ const page = async () => {
 
   // Fetch the selected experiments data with an explicit type.
   const selectedData = await client.fetch<SelectedExperimentsType[]>(selectedExperimentsQuery);
+
+  const projects = await client.fetch(projectsQuery)
 
   // Flatten all images from all experiments into a single array.
   const images = selectedData.flatMap(doc => doc.experiments.map(exp => exp.image));
@@ -37,7 +38,7 @@ const page = async () => {
 
         {/* Accordion */}
         <div>
-          <Accordion data={projectData} />
+          <Accordion data={projects} />
         </div>
 
         {/* Slides */}
