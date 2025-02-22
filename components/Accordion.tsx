@@ -55,7 +55,7 @@ const Accordion = ({ data }: AccordionProps) => {
                 transition={{ duration: 0.4 }}
                 className="py-4 lg:px-6 lg:pt-4 lg:pb-12"
               >
-                <div className="grid gap-10 lg:gap-6 lg:grid-cols-2">
+                <div className="grid gap-10 lg:gap-16 lg:grid-cols-2">
                   {section.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
@@ -77,7 +77,7 @@ const Accordion = ({ data }: AccordionProps) => {
                       </div>
 
                       {/* Image */}
-                      <div className="relative w-[359px] h-[255.81px]">
+                      <div className="relative w-full h-[255.81px] lg:h-[350px]">
                         <Image
                           src={urlFor(item.smallImage).url()}
                           alt={item.heading}
@@ -104,7 +104,7 @@ const Accordion = ({ data }: AccordionProps) => {
                         </div>
 
                         {/* Links */}
-                        <div className="flex gap-4 justify-start lg:justify-between w-full">
+                        <div className="flex gap-4 justify-start items-start lg:justify-between w-full">
                           {/* Live Link */}
                           <a
                             href={item.liveLink}
@@ -112,7 +112,7 @@ const Accordion = ({ data }: AccordionProps) => {
                             rel="noopener noreferrer"
                             className="px-4 py-2 bg-blue-500 text-gray-900 dark:text-white rounded-md 
                               lg:bg-transparent lg:px-0 lg:py-0 hover:text-amber-700 dark:hover:text-[#C7FC56] lg:text-xl font-medium
-                              hover:underline hover:underline-offset-[6px] transition-all duration-700"
+                              lg:-mt-1 hover:underline hover:underline-offset-[6px] transition-all duration-700"
                           >
                             Live link here
                           </a>
