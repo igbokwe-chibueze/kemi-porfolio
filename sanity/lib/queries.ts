@@ -91,8 +91,26 @@ export const projectsQuery = groq`
 
 
 export const projectBySlugQuery = groq`
-  *[_type == "projects"]{
-    "project": items[slug.current == $slug][0]
+  *[_type == "projects" && defined(items[slug.current == $slug][0])]{
+    "project": items[slug.current == $slug][0]{
+      heading,
+      btnBg,
+      headerImage,
+      projectOverview{
+        backgroundInfo,
+        problems,
+        goals,
+        opportunity,
+        solutions
+      },
+      snapshots[]{
+        imageUrl,
+        description
+      }
+    }
   }[0]
 `;
+
+
+
 
