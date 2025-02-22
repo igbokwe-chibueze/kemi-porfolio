@@ -13,22 +13,25 @@ type PageParams = {
   slug: string;
 };
 
-export const revalidate = 0; // On-demand only revalidation
-
-const page = async ({ params }: { params:  Promise<PageParams> }) => {
-
+const page = async ({ params }: { params: Promise<PageParams> }) => {
   const resolvedParams = await params; // Await the promise
-
-  const { slug } = resolvedParams; // Access 'slug' from the resolved params
+  const { slug } = resolvedParams;
 
   // Fetch the project data based on the slug
   const data = await client.fetch(projectBySlugQuery, { slug });
 
-  if (!data || !data.project) {
-    return <div>Project not found</div>;
+
+  if (!data || !data.projectItem) {
+    return (
+      <div className=" lg:min-h-screen">
+        <div className="py-8 lg:py-12 space-y-1">
+          <div>Project not found for {slug}</div>
+        </div>
+      </div>
+    );
   }
 
-  const project = data.project;
+  const project = data.projectItem;
   
 
   return (
@@ -57,7 +60,7 @@ const page = async ({ params }: { params:  Promise<PageParams> }) => {
                 <div className="lg:col-span-2 w-44 lg:w-auto">
                   <div className="group px-5 py-2 flex justify-center items-center rounded-full 
                     bg-[var(--headingBg)] hover:bg-[#FAB041]"
-                    style={{ '--headingBg': project.btnBg } as React.CSSProperties}
+                    style={{ '--headingBg': project?.btnBg || '#43C949' } as React.CSSProperties}
                   >
                     <ArrowDownIcon 
                       className={`text-black w-8 h-8 lg:w-24 lg:h-32
