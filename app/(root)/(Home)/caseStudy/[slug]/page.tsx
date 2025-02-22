@@ -20,8 +20,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
   // Fetch the project data based on the slug
   const data = await client.fetch(projectBySlugQuery, { slug });
 
-
-  if (!data || !data.projectItem) {
+  if (!data || !data.project) {
     return (
       <div className=" lg:min-h-screen">
         <div className="py-8 lg:py-12 space-y-1">
@@ -31,7 +30,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
     );
   }
 
-  const project = data.projectItem;
+  const project = data.project;
   
 
   return (
