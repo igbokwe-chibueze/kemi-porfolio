@@ -8,6 +8,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { projectBySlugQuery } from "@/sanity/lib/queries";
 import { Snapshot } from "@/types/projectsTypes";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type PageParams = {
   slug: string;
@@ -20,14 +21,9 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
   // Fetch the project data based on the slug
   const data = await client.fetch(projectBySlugQuery, { slug });
 
-  if (!data || !data.project) {
-    return (
-      <div className=" lg:min-h-screen">
-        <div className="py-8 lg:py-12 space-y-1">
-          <div>Project not found for {slug}</div>
-        </div>
-      </div>
-    );
+  // If no valid data is found, call notFound() to render the not-found.tsx page
+  if (!data) {
+    notFound();
   }
 
   const project = data.project;
