@@ -1,4 +1,8 @@
 // app/not-found.tsx
+
+// This is the second version of the not-found.tsx script, the first version is in the component file, but not in use.
+// The difference is in how the inverted border radius is handled .
+
 "use client"
 
 import Link from 'next/link';
@@ -23,15 +27,13 @@ export default function NotFound() {
         </div>
 
         <div
-          className=" absolute left-0 top-0 border-b-8 border-b-blue-500 border-r-8 border-r-blue-500 
-            rounded-br-xl bg-blue-500
+          className=" absolute left-0 top-0 bg-blue-500 rounded-br-[12px] pr-2 pb-2
 
-            after:absolute after:right-[-20px] after:top-0 after:bg-transparent after:text-blue-500 
-            after:w-[12px] after:h-[12px] 
-            after:rounded-tl-xl after:shadow-[-3px_-3px_0px_3px_currentColor]
+            after:absolute after:w-[12px] after:h-[12px] after:right-[-12px] after:top-0 
+            after:bg-[radial-gradient(circle_12px_at_bottom_right,_#0000_98%,_#3b82f6)]
 
-            before:absolute before:bottom-[-20px] before:left-0 before:bg-transparent before:text-blue-500
-            before:w-[12px] before:h-[12px] before:rounded-tl-xl before:shadow-[-3px_-3px_0px_3px_currentColor]
+            before:absolute before:w-[12px] before:h-[12px] before:bottom-[-12px] before:left-0
+            before:bg-[radial-gradient(circle_12px_at_bottom_right,_#0000_98%,_#3b82f6)]
           "
         >
           <Link
@@ -42,19 +44,19 @@ export default function NotFound() {
           </Link>
         </div>
 
-        <div
-          className=" absolute right-0 bottom-0 border-t-8 border-t-blue-500 border-l-8 border-l-blue-500 rounded-tl-xl bg-blue-500
-            after:absolute after:right-0 after:top-[-20px] after:bg-transparent after:text-blue-500 
-            after:w-[12px] after:h-[12px] 
-            after:rounded-br-xl after:shadow-[3px_3px_0px_3px_currentColor]
-            before:absolute before:bottom-0 before:left-[-20px] before:bg-transparent before:text-blue-500
-            before:w-[12px] before:h-[12px]
-            before:rounded-br-xl before:shadow-[3px_3px_0px_3px_currentColor]
+        <div className=" absolute bottom-0 right-0 bg-blue-500 rounded-tl-[12px] pl-2 pt-2
+
+          after:absolute after:w-[12px] after:h-[12px] after:right-0 after:top-[-12px] 
+          after:bg-[radial-gradient(circle_12px_at_top_left,_#0000_98%,_#3b82f6)]
+
+          before:absolute before:w-[12px] before:h-[12px] before:bottom-0 before:left-[-12px]
+          before:bg-[radial-gradient(circle_12px_at_top_left,_#0000_98%,_#3b82f6)]
           "
         >
           <button
             onClick={() => router.back()}
-            className=" inline-block px-6 py-3 rounded-lg bg-white text-purple-600 font-bold hover:bg-purple-300 transition"
+            className=" inline-block px-6 py-3 rounded-[10px] bg-white text-purple-600 font-bold 
+            hover:bg-purple-300 transition"
           >
             Go Back
           </button>
