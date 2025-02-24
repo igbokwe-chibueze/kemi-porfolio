@@ -1,6 +1,7 @@
 // app/(root)/(Home)/caseStudy/${item.slug}/page.tsx
 
 import DetailsPageAccordion from "@/components/DetailsPageAccordion";
+import MotionWrapper from "@/components/FramerMotionWrappers/MotionWrapper";
 import RandomProject from "@/components/RandomProject";
 import { ArrowDownIcon } from "@/constants/Icons";
 import { client } from "@/sanity/lib/client";
@@ -34,7 +35,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
       <div className="py-8 lg:py-12 space-y-1">
         {project ? (
           <div className="space-y-8 lg:space-y-20">
-            <div className="relative w-full h-[220px] lg:h-[600px]">
+            <MotionWrapper className="relative w-full h-[220px] lg:h-[600px]">
               <Image
                 src={urlFor(project.headerImage).url()}
                 alt={project.heading}
@@ -42,7 +43,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
                 fill
                 style={{ objectFit: "cover" }}
               />
-            </div>
+            </MotionWrapper>
 
             <div className=" main-container space-y-8 lg:space-y-20">
               <h1 className="font-monument-grotesk text-4xl md:text-5xl lg:text-[115px] font-normal 
@@ -51,7 +52,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
                 Background Information
               </h1>
 
-              <div className=" space-y-4 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-40">
+              <MotionWrapper className=" space-y-4 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-40">
                 <div className="lg:col-span-2 w-44 lg:w-auto">
                   <div className="group px-5 py-2 flex justify-center items-center rounded-full 
                     bg-[var(--headingBg)] hover:bg-[#FAB041]"
@@ -81,7 +82,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
                   />
                 </div>
     
-              </div>
+              </MotionWrapper>
 
               <h1 className="font-monument-grotesk text-4xl md:text-5xl lg:text-[115px] font-normal 
                 tracking-tight leading-none text-gray-900 dark:text-white"
@@ -89,7 +90,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
                 Process
               </h1>
 
-              <div className="space-y-20">
+              <MotionWrapper className="space-y-20">
                 {project.snapshots?.map((snapshot: Snapshot, index: string) => (
                   <div key={index} className="space-y-10">
                     <div className="relative w-full h-[220px] lg:h-[600px]">
@@ -114,16 +115,17 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
                     </ul>
                   </div>
                 ))}
-              </div>
+              </MotionWrapper>
 
             </div>
           </div>
         ) : (
           <p>No data available</p>
         )}
-        <div className=" lg:px-48">
+
+        <MotionWrapper className=" lg:px-48">
           <RandomProject/>
-        </div>
+        </MotionWrapper>
           
       </div>
     </div>

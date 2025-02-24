@@ -1,12 +1,14 @@
 import { ArrowDownIcon } from "@/constants/Icons"
 import Image from "next/image"
+import LeftHorizontalMotionWrapper from "../FramerMotionWrappers/LeftHorizontalMotionWrapper"
+import RightHorizontalMotionWrapper from "../FramerMotionWrappers/RightHorizontalMotionWrapper"
 
 const Hero = () => {
   return (
     <section id="heroSection" className="min-h-[70vh] lg:min-h-screen">
         <div className=" relative main-container">
           {/* Column One */}
-          <div className="">
+          <LeftHorizontalMotionWrapper className="">
             <h2 className="font-monument-grotesk text-2xl md:text-5xl lg:text-7xl font-normal 
               tracking-tight leading-none text-gray-900 dark:text-white"
             >
@@ -34,10 +36,10 @@ const Hero = () => {
               </h1>
             </div>
 
-          </div>
+          </LeftHorizontalMotionWrapper>
 
           {/* Column two */}
-          <div className="mt-4 lg:absolute lg:top-12 lg:right-0 space-y-2 lg:space-y-4">
+          <RightHorizontalMotionWrapper className="mt-4 lg:absolute lg:top-12 lg:right-0 space-y-2 lg:space-y-4">
             <Image
               src={"/KemiPhoto.png"}
               width={560}
@@ -55,7 +57,7 @@ const Hero = () => {
                 tracking-tight leading-none text-white dark:text-gray-900 "
               >one pixel at a time</span>
             </div>
-          </div>
+          </RightHorizontalMotionWrapper>
         </div>
     </section>
   )

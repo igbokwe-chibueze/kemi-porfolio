@@ -1,6 +1,7 @@
 import Accordion from "../Accordion"
 import { client } from "@/sanity/lib/client"
 import { projectsQuery } from "@/sanity/lib/queries"
+import MotionWrapper from "../FramerMotionWrappers/MotionWrapper";
 
 export const revalidate = 0; // On-demand only
 
@@ -11,7 +12,7 @@ const Projects = async () => {
 
   return (
     <section id="projectSection" className="min-h-[70vh] lg:min-h-screen">
-        <div className=" main-container space-y-10 lg:space-y-20">
+        <MotionWrapper className=" main-container space-y-10 lg:space-y-20">
           <div className="space-y-8">
             <h1 className="header-one">
               Selected Projects
@@ -28,7 +29,7 @@ const Projects = async () => {
           <div>
             <Accordion data={projects} />
           </div>
-        </div>
+        </MotionWrapper>
     </section>
   )
 }

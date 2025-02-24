@@ -5,6 +5,7 @@ import { profileQuery } from "@/sanity/lib/queries";
 import { ProfileType } from "@/types/profileTypes";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import MotionWrapper from "./FramerMotionWrappers/MotionWrapper";
 
 const Footer = () => {
 
@@ -42,7 +43,7 @@ const Footer = () => {
 
   return (
     <footer id="footer" className="relative bg-gray-200 dark:bg-night-blue border-t border-gray-600 dark:border-gray-100">
-      <div className="py-8 lg:py-16">
+      <MotionWrapper className="py-8 lg:py-16">
         <div className="max-w-screen-xl mx-auto px-4 lg:px-12">
           <div className=" flex flex-col space-y-4 lg:space-y-10">
             <span className="font-monument-grotesk text-xl lg:text-7xl font-normal text-gray-900 dark:text-white"
@@ -107,7 +108,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </MotionWrapper>
     </footer>
   )
 }

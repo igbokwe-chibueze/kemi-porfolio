@@ -1,5 +1,6 @@
 import Accordion from "@/components/Accordion"
 import ImageSlider from "@/components/ImageSlider"
+import MotionWrapper from "@/components/FramerMotionWrappers/MotionWrapper";
 import { client } from "@/sanity/lib/client";
 import { projectsQuery, selectedExperimentsQuery } from "@/sanity/lib/queries";
 import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
@@ -18,7 +19,7 @@ const page = async () => {
 
   return (
     <div className=" lg:min-h-screen">
-      <div className=" main-container space-y-10 lg:space-y-20">
+      <MotionWrapper className=" main-container space-y-10 lg:space-y-20">
         <div
           className="ml-auto w-64 lg:w-[830px] h-20 lg:h-[130px] px-4 lg:px-10 
           bg-[#5e2d2d] dark:bg-[#FBC3C3] rounded-full"
@@ -47,7 +48,7 @@ const page = async () => {
           <ImageSlider images={images} itemsWrapperClassName='animate-move-left [animation-duration:40s] hover:[animation-play-state:paused]'/>
           <ImageSlider images={images} itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
         </div>
-      </div>
+      </MotionWrapper>
     </div>
   )
 }

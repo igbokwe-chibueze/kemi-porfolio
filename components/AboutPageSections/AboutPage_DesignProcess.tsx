@@ -1,5 +1,6 @@
 import { ArrowDownIcon } from "@/constants/Icons";
 import { DesignProcessItem } from "@/types/profileTypes";
+import MotionWrapper from "../FramerMotionWrappers/MotionWrapper";
 
 interface DesignProcessProps {
     data: DesignProcessItem[];
@@ -8,7 +9,7 @@ interface DesignProcessProps {
 const AboutPage_DesignProcess = ({data}: DesignProcessProps) => {
   return (
     <section className="lg:min-h-screen">
-        <div className="main-container">
+        <MotionWrapper className="main-container">
             <div className="flex justify-between items-center">
                 <h1 className="font-monument-grotesk text-4xl lg:text-[100px] font-normal 
                 text-gray-900 dark:text-white">
@@ -47,7 +48,7 @@ const AboutPage_DesignProcess = ({data}: DesignProcessProps) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </MotionWrapper>
     </section>
   )
 }

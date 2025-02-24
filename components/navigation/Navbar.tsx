@@ -7,6 +7,7 @@ import { MenuBtnEmpty } from "@/constants/Icons";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { client } from "@/sanity/lib/client";
 import { profileQuery } from "@/sanity/lib/queries";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   // State to store the profile data from Sanity.
@@ -64,15 +65,20 @@ const Navbar = () => {
     >
       <div className="flex flex-wrap justify-between items-center max-w-screen-xl mx-auto">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          {/* Logo image can be placed here */}
-          <span
-            className="font-monument-grotesk text-xl lg:text-2xl font-normal text-gray-900 dark:text-white 
-            leading-none self-center whitespace-nowrap"
-          >
-            Amelia Olufowobi
-          </span>
-        </Link>
+        <motion.div
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          <Link href="/" className="flex items-center">
+            {/* Logo image can be placed here */}
+            <span
+              className="font-monument-grotesk text-xl lg:text-2xl font-normal text-gray-900 dark:text-white 
+              leading-none self-center whitespace-nowrap"
+            >
+              Amelia Olufowobi
+            </span>
+          </Link>
+        </motion.div>
 
         <div className="hidden md:flex">
           <span
@@ -86,7 +92,10 @@ const Navbar = () => {
         {/* ThemeSwitcher and Menu Button */}
         <div className="flex justify-center items-center lg:space-x-3">
           <ThemeSwitcher />
-          <button
+          <motion.button
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+
             type="button"
             onClick={toggleNavLinks}
             className="w-10 h-10 lg:w-[92px] lg:h-[92px]"
@@ -96,7 +105,7 @@ const Navbar = () => {
             ) : (
               <MenuBtnEmpty className="fill-gray-500 dark:fill-gray-200 text-gray-500" />
             )}
-          </button>
+          </motion.button>
         </div>
 
         {/* Navigation Links */}

@@ -2,6 +2,8 @@ import ImageSlider from "@/components/ImageSlider";
 import { selectedExperimentsQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { SelectedExperimentsType } from "@/types/selectedExperimentsTypes";
+import { ArrowDownIcon } from "@/constants/Icons";
+import MotionWrapper from "../FramerMotionWrappers/MotionWrapper";
 
 const Page = async () => {
   // Fetch the selected experiments data with an explicit type.
@@ -12,20 +14,18 @@ const Page = async () => {
 
   return (
     <div className="lg:min-h-screen">
-      <div className="main-container space-y-10 lg:space-y-20">
-        <div
-          className="ml-auto w-64 lg:w-[830px] h-20 lg:h-[130px] px-4 lg:px-10 
-          bg-[#5e2d2d] dark:bg-[#FBC3C3] rounded-full"
-        ></div>
-        <div className="space-y-8">
-          <h1 className="header-one">
-            Selected Projects
-          </h1>
-          <p className="font-gT-WalsheimPro text-xl lg:text-5xl font-normal 
-            tracking-tight leading-none text-gray-900 dark:text-white"
+      <MotionWrapper className="main-container space-y-10 lg:space-y-20">
+        <div className="flex items-center justify-between">
+          <div className="px-5 py-2 bg-[#FAB041] rounded-full">
+            <ArrowDownIcon className="text-black w-6 h-6 lg:w-56 lg:h-40" />
+          </div>
+
+          <h2
+            className="font-gT-WalsheimPro text-xl lg:text-7xl font-normal 
+              text-right tracking-tight text-gray-900 dark:text-white"
           >
-            Some opportunities and <br /> projects that I’m proud of!
-          </p>
+            A selected sets of <br /> experiments I’m building
+          </h2>
         </div>
 
         {/* Slides */}
@@ -34,7 +34,7 @@ const Page = async () => {
           <ImageSlider images={images} itemsWrapperClassName="animate-move-left [animation-duration:40s] hover:[animation-play-state:paused]" />
           <ImageSlider images={images} itemsWrapperClassName='animate-move-right [animation-duration:50s] hover:[animation-play-state:paused]'/>
         </div>
-      </div>
+      </MotionWrapper>
     </div>
   );
 };

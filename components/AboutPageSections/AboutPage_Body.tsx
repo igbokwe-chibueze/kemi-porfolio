@@ -1,10 +1,11 @@
 import { ArrowDownIcon } from "@/constants/Icons"
+import MotionWrapper from "../FramerMotionWrappers/MotionWrapper"
 
 
 const AboutPage_Body = () => {
   return (
     <section className="lg:min-h-screen">
-        <div className="main-container space-y-16">
+        <MotionWrapper className="main-container space-y-16">
             <div className="lg:px-20 space-y-4 lg:space-y-14">
                 <h2 className="font-gT-WalsheimPro text-xl lg:text-6xl font-normal 
                     leading-loose text-pretty tracking-tight text-gray-900 dark:text-white"
@@ -56,7 +57,7 @@ const AboutPage_Body = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </MotionWrapper>
     </section>
   )
 }
