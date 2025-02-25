@@ -69,9 +69,8 @@ const DetailsPageAccordion = ({ data }: AccordionProps) => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.6 }}
-                className="py-4 lg:px-6 lg:pt-4 lg:pb-12"
               >
-                <ul className="list-disc pl-5">
+                <ul className="py-4 px-6 space-y-4">
                   {section.content.map((item, i) => (
                     <li
                       key={i}

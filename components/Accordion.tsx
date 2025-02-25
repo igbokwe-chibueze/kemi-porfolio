@@ -53,9 +53,9 @@ const Accordion = ({ data }: AccordionProps) => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.4 }}
-                className="py-4 lg:px-6 lg:pt-4 lg:pb-12"
+                //className="py-4 lg:px-6 lg:pt-4 lg:pb-12"
               >
-                <div className="grid gap-10 lg:gap-16 lg:grid-cols-2">
+                <div className="py-4 px-6 grid gap-10 lg:gap-16 lg:grid-cols-2">
                   {section.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}

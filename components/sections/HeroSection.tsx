@@ -48,13 +48,6 @@ const Hero = async () => {
 
           {/* Column two */}
           <RightHorizontalMotionWrapper className="mt-4 lg:absolute lg:top-12 lg:right-0 space-y-2 lg:space-y-4">
-            {/* <Image
-              src={"/KemiPhoto.png"}
-              width={560}
-              height={560}
-              loading='lazy'
-              alt={"Amelia Photo"}
-            /> */}
             <div className="relative w-full h-[120px] lg:h-[250px] overflow-hidden">
               <Image
                 src={imageUrl}
@@ -63,7 +56,7 @@ const Hero = async () => {
                 style={{ 
                   objectFit: "cover" ,
                   objectPosition: "center 30%",
-                }} // Crops the image to cover the container
+                }}
                 priority
                 className="rounded-[45px] lg:rounded-[90px]"
               />
