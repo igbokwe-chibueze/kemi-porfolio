@@ -2,8 +2,16 @@ import { ArrowDownIcon } from "@/constants/Icons"
 import Image from "next/image"
 import LeftHorizontalMotionWrapper from "../FramerMotionWrappers/LeftHorizontalMotionWrapper"
 import RightHorizontalMotionWrapper from "../FramerMotionWrappers/RightHorizontalMotionWrapper"
+import { client } from "@/sanity/lib/client"
+import { profileQuery } from "@/sanity/lib/queries"
+import { urlFor } from "@/sanity/lib/image"
 
-const Hero = () => {
+const Hero = async () => {
+  // Fetch the profile data from Sanity
+    const profileData = await client.fetch(profileQuery)
+    const profilePicture = profileData.profilePicture
+    const imageUrl = urlFor(profilePicture).url()
+
   return (
     <section id="heroSection" className="min-h-[70vh] lg:min-h-screen">
         <div className=" relative main-container">
@@ -40,14 +48,26 @@ const Hero = () => {
 
           {/* Column two */}
           <RightHorizontalMotionWrapper className="mt-4 lg:absolute lg:top-12 lg:right-0 space-y-2 lg:space-y-4">
-            <Image
+            {/* <Image
               src={"/KemiPhoto.png"}
               width={560}
               height={560}
               loading='lazy'
               alt={"Amelia Photo"}
-              className=""
-            />
+            /> */}
+            <div className="relative w-full h-[120px] lg:h-[250px] overflow-hidden">
+              <Image
+                src={imageUrl}
+                alt={`Profile Picture`}
+                fill // Ensures the image takes the entire container space
+                style={{ 
+                  objectFit: "cover" ,
+                  objectPosition: "center 30%",
+                }} // Crops the image to cover the container
+                priority
+                className="rounded-[45px] lg:rounded-[90px]"
+              />
+            </div>
 
             <div
               className="lg:ml-64 flex items-center justify-center w-fit h-20 lg:h-[130px] px-4 lg:px-10 
