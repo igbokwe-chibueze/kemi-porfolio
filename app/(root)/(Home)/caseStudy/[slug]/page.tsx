@@ -124,7 +124,7 @@ const page = async ({ params }: { params: Promise<PageParams> }) => {
         )}
 
         <MotionWrapper className=" lg:px-48">
-          <RandomProject/>
+          <RandomProject currentSlug={slug}/>
         </MotionWrapper>
           
       </div>

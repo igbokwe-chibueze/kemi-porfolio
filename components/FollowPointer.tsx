@@ -6,7 +6,7 @@ const FollowPointer = () => {
     const { point, ref } = useFollowPointer();
 
   return (
-    <div>
+    <div className=" pointer-events-none">
       <motion.div
         ref={ref}
         className="fixed h-4 w-4 lg:h-8 lg:w-8 ring-2 ring-gray-600 dark:ring-gray-100 rounded-full"
